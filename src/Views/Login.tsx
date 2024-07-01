@@ -14,28 +14,20 @@ export default function LogIn({ logUserIn }: LogInProps) {
 
             <div className="w-1/2 mx-auto">
                 <form className="form-control">
-
-                    <label className="label">
-                        <span className="label-text">Username</span>
-                    </label>
                     <input
                         type="text"
                         placeholder="Username"
-                        className="input input-bordered"
+                        className="input input-bordered m-2"
                     />
-                    <label className="label">
-                        <span className="label-text">Password</span>
-                    </label>
                     <input
                         type="password"
                         placeholder="Password"
-                        className="input input-bordered"
+                        className="input input-bordered m-2"
                     />
-
                     <button className="btn my-8 mx-auto py-8 px-16 content-center btn-outline w-1/2">
                         Log In
                     </button>
-                    <a href="/signup" className="text-center">
+                    <a href="/signup" className="text-center link">
                         Need an account? Sign Up
                     </a>
                 </form>

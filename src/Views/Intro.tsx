@@ -16,7 +16,7 @@ export default function Intro({}: IntroProps) {
                             <a>FAQ</a>
                         </li>
                         <li>
-                            <a>Log In</a>
+                            <a href="../login">Log In</a>
                         </li>
                     </ul>
                 </div>
@@ -28,9 +28,9 @@ export default function Intro({}: IntroProps) {
                     <h3 className="text-2xl font-bold">
                         Become a more effective spoonie
                     </h3>
-                    <p className="text-lg text-left mt-8 w-1/2">
+                    <p className="text-lg text-left mt-8 w-3/4">
                         Our mission is to help those with chronic and mental
-                        illness better manage their energy based on spoon theory
+                        illness better manage their energy based on spoon theory.
                     </p>
                     <a href="../signup">
                     <button className="btn mt-16 py-8 px-16 content-center btn-outline">
@@ -39,9 +39,9 @@ export default function Intro({}: IntroProps) {
                     </a>
                 </div>
 
-                <div className="grid grid-cols-3 mt-16">
+                <div className="grid grid-cols-3 gap-24 mt-16">
                     <div className="card bg-base-100 ">
-                        <figure className="px-10 pt-10">
+                        <figure className="pt-10">
                             <img
                                 src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
                                 alt="Shoes"
@@ -49,11 +49,11 @@ export default function Intro({}: IntroProps) {
                             />
                         </figure>
                         <div className="card-body items-center text-left">
-                            <p>Track and manage your energy</p>
+                            <p className="text-lg">Track and manage your energy</p>
                         </div>
                     </div>
                     <div className="card bg-base-100 ">
-                        <figure className="px-10 pt-10">
+                        <figure className="pt-10">
                             <img
                                 src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
                                 alt="Shoes"
@@ -61,11 +61,11 @@ export default function Intro({}: IntroProps) {
                             />
                         </figure>
                         <div className="card-body items-center text-left">
-                            <p>View in-depth insights and recommendations</p>
+                            <p className="text-lg">View in-depth insights and recommendations</p>
                         </div>
                     </div>
                     <div className="card bg-base-100 ">
-                        <figure className="px-10 pt-10">
+                        <figure className="pt-10">
                             <img
                                 src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
                                 alt="Shoes"
@@ -73,7 +73,7 @@ export default function Intro({}: IntroProps) {
                             />
                         </figure>
                         <div className="card-body items-center text-left">
-                            <p>Share discoveries with those around you</p>
+                            <p className="text-lg">Share discoveries with those around you</p>
                         </div>
                     </div>
                 </div>
