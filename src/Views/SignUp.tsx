@@ -15,7 +15,7 @@ export default function SignUp({}: SignUpProps) {
         }
     );
 
-    const [seePassword, setSeePassword] = useState(false);
+    // const [seePassword, setSeePassword] = useState(false);
 
     const disableSubmit =
         (userFormData.password?.length ?? 0) < 5 ||
@@ -71,7 +71,8 @@ export default function SignUp({}: SignUpProps) {
                         className="input input-bordered m-2"
                     />
                     <input
-                        type={seePassword ? 'text' : 'password'}
+                        type='password'
+                        // type={seePassword ? 'text' : 'password'}
                         name="password"
                         placeholder="Password"
                         value={userFormData.password}
@@ -81,7 +82,8 @@ export default function SignUp({}: SignUpProps) {
                     
                     {userFormData.password !== userFormData.confirm_password && <p className="text-red-500 m-2">*Passwords do not match</p>}
                     <input
-                        type={seePassword ? 'text' : 'password'}
+                        type='password'
+                        // type={seePassword ? 'text' : 'password'}
                         name="confirm_password"
                         placeholder="Confirm Password"
                         value={userFormData.confirm_password}

@@ -2,7 +2,7 @@
 
 type LogInProps = { logUserIn: () => void };
 
-export default function LogIn({ logUserIn }: LogInProps) {
+export default function LogIn({  }: LogInProps) {
     return (
         <div className="w-full place-content-center">
             <div className="grid grid-cols-1 mt-16 mb-8 mx-auto place-items-center w-10/12">

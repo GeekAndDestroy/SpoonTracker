@@ -26,11 +26,11 @@ function App() {
         user_id: NaN,
     });
 
-    // useEffect(() => {
-    //   if (!isLoggedIn && location.pathname !== '/signup' && location.pathname !== '/login') {
-    //     navigate('/intro');
-    //   }
-    // }, [location.pathname]);
+    useEffect(() => {
+      if (!isLoggedIn && location.pathname !== '/signup' && location.pathname !== '/login') {
+        navigate('/intro');
+      }
+    }, [location.pathname]);
 
     // useEffect(() => {
     //   async function getLoggedInUser(){

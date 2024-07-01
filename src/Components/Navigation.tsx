@@ -5,7 +5,7 @@ type NavigationProps = {
         logUserOut: () => void,
 }
 
-export default function Navigation({ isLoggedIn }: NavigationProps) {
+export default function Navigation({  }: NavigationProps) {
     return (
         <div>Navigation</div>
     )
