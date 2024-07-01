@@ -7,7 +7,25 @@ export default {
   theme: {
     extend: {},
   },
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          "primary": "#E200E6",
+          "secondary": "#e7e7e7",
+          "accent": "#ffff00",
+          "neutral": "#E200E6",
+          "base-100": "#ffffff",
+          "info": "#62b2fd",
+          "success": "#00ff00",
+          "warning": "#fdb900",
+          "error": "#ff8eab",
+          },
+        },
+      ],
+    },
   plugins: [
+    require("@tailwindcss/typography"),
     require('daisyui'),
   ],
 }

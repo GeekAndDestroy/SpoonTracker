@@ -24,7 +24,7 @@ export default function LogIn({  }: LogInProps) {
                         placeholder="Password"
                         className="input input-bordered m-2"
                     />
-                    <button className="btn my-8 mx-auto py-8 px-16 content-center btn-outline w-1/2">
+                    <button className="btn my-8 mx-auto py-8 px-16 content-center bg-info text-white w-1/2">
                         Log In
                     </button>
                     <a href="/signup" className="text-center link">

@@ -90,7 +90,7 @@ export default function SignUp({}: SignUpProps) {
                         onChange={handleInputChange}
                         className="input input-bordered m-2"
                     />
-                    <button className="btn my-8 mx-auto py-8 px-16 content-center btn-outline w-1/2" disabled={disableSubmit}>
+                    <button className="btn my-8 mx-auto py-8 px-16 content-center bg-info w-1/2 text-white" disabled={disableSubmit}>
                         Sign Up
                     </button>
                     <a href="/login" className="text-center link">
