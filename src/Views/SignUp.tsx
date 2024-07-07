@@ -22,7 +22,10 @@ export default function SignUp({}: SignUpProps) {
 
     const disableSubmit =
         (userFormData.password?.length ?? 0) < 5 ||
-        userFormData.password !== userFormData.confirm_password;
+        userFormData.password !== userFormData.confirm_password ||
+        !userFormData.first_name ||
+        !userFormData.last_name ||
+        !userFormData.email;
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserFormData({ ...userFormData, [e.target.name]: e.target.value });

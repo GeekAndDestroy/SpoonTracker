@@ -29,7 +29,7 @@ export default function PageHeader({}: PageHeaderProps) {
                             <input
                                 type="text"
                                 placeholder="Spend Spoons"
-                                className="input input-bordered w-full my-4 bg-sky-100"
+                                className="input input-bordered w-full my-4 bg-sky-50"
                             />
                             <p className="text-medium my-4">
                                 How many spoons did you consume?
@@ -46,7 +46,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="spoons_1"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold">
@@ -66,7 +66,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="spoons_2"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold">
@@ -86,7 +86,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="spoons_3"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold">
@@ -106,7 +106,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="spoons_4"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold">
@@ -126,7 +126,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="spoons_5"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold">
@@ -146,7 +146,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="spoons_6"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold">
@@ -166,7 +166,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="spoons_7"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold">
@@ -186,7 +186,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="spoons_8"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold">
@@ -206,7 +206,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="spoons_9"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold">
@@ -226,7 +226,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="spoons_10"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold">
@@ -246,7 +246,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="spoons_11"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-50"
                                     >
                                         <div className="flex justify-center ">
                                             <p className="w-full text-base font-semibold p-auto text-center">
@@ -266,7 +266,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="spoons_12"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 radio-xl bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold">
@@ -291,7 +291,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="15min"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold mx-4 my-2">
@@ -311,7 +311,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="30min"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold mx-4 my-2">
@@ -331,7 +331,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="45min"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold mx-4 my-2">
@@ -351,7 +351,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="1hr"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold mx-4 my-2">
@@ -371,7 +371,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="1hr+"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold mx-4 my-2">
@@ -396,7 +396,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="EM"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold mx-4 my-2">
@@ -416,7 +416,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="M"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold mx-4 my-2">
@@ -436,7 +436,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="A"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold mx-4 my-2">
@@ -456,7 +456,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="E"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold mx-4 my-2">
@@ -476,7 +476,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     />
                                     <label
                                         htmlFor="LE"
-                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-100"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 bg-sky-50"
                                     >
                                         <div className="flex justify-center">
                                             <div className="w-full text-base font-semibold mx-4 my-2">
