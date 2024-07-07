@@ -39,23 +39,23 @@ export default function Home({}: HomeProps) {
                 </div>
                 <div className="grid grid-cols-5 w-full gap-4 p-2">
                     <div className="col-span-3 gap-4">
-                        <div className="col-span-3 border-2 rounded-lg p-2 bg-sky-100 h-72">
+                        <div className="col-span-3 border-2 border-gray-300 rounded-lg p-2 bg-sky-100 h-72">
                             Graph
                         </div>
                         <div className="flex justify-between w-full gap-4 col-span-3 mt-4">
-                            <div className="border-2 w-1/3 rounded-lg p-2 bg-sky-100 h-24">
+                            <div className="border-2 w-1/3 border-gray-300 rounded-lg p-2 bg-sky-100 h-24">
                                 Activities
                             </div>
-                            <div className="border-2 w-1/3 rounded-lg p-2 bg-sky-100 h-24">
+                            <div className="border-2 w-1/3 border-gray-300 rounded-lg p-2 bg-sky-100 h-24">
                                 Spoons Used
                             </div>
-                            <div className="border-2 w-1/3 rounded-lg p-2 bg-sky-100 h-24">
+                            <div className="border-2 w-1/3 border-gray-300 rounded-lg p-2 bg-sky-100 h-24">
                                 Flare Ups
                             </div>
                         </div>
                     </div>
                     <div className="col-span-2">
-                        <div className="border-2 rounded-lg p-2 bg-sky-100 h-52">
+                        <div className="border-2 border-gray-300 rounded-lg p-2 bg-sky-100 h-52">
                             Goals
                         </div>
                     </div>
