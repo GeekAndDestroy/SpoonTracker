@@ -40,14 +40,14 @@ export default function Intro({}: IntroProps) {
                         </a>
                     </div>
                     <div className="col-span-2">
-                        <img src="../assets/images/dashboard.jpg" className="w-full"/>
+                        <img src="../src/assets/images/dashboard.png" className="w-full"/>
                         
                     </div>
                 </div>
                 </div>
 
                 
-                <div className="flex justify-center bg-info w-full text-white my-20 py-8">
+                <div className="flex justify-center bg-info w-full text-white my-20 py-12">
                     <div className="w-10/12">
                         <h3 className="text-xl font-semibold mb-4">What is Spoon theory and how can you apply it?</h3>
                         <p>Spoon theory is a simple yet powerful way to understand what it’s like to live with chronic illnesses or mental health challenges. Imagine you start your day with a handful of spoons, each representing a unit of energy. Every activity, from getting out of bed to going to work or spending time with friends, costs you a spoon or more. For "Spoonies," the nickname for those who live by this metaphor, running out of spoons means they can’t do anything more until they rest and recharge. Our app, Spork, helps Spoonies manage their limited energy by tracking daily activities and offering insights to prevent flare-ups. It’s also a tool to help friends and family understand and support their loved ones better. With Spork, you can take control of your day, conserve your spoons, and live with greater ease and understanding.</p>

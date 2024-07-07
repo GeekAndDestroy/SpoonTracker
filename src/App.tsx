@@ -41,7 +41,6 @@ function App() {
     //         last_name: localStorage.getItem('last_name')!,
     //         token: localStorage.getItem('token')!,
     //         user_id: parseInt(localStorage.getItem('user_id')!),
-    //         is_admin: Boolean(localStorage.getItem('is_admin')!)
     //       })
     //     }
     //   }
@@ -60,7 +59,6 @@ function App() {
         localStorage.removeItem("first_name");
         localStorage.removeItem("last_name");
         localStorage.removeItem("user_id");
-        localStorage.removeItem("is_admin");
         setLoggedInUser({
             email: "",
             first_name: "",
@@ -73,17 +71,12 @@ function App() {
 
     return (
         <>
-            {isLoggedIn && (
-                <Navigation isLoggedIn={isLoggedIn} logUserOut={logUserOut} />
-            )}
-
-
-
+            {/* <div className="grid grid-cols-5">
+                <div className="col-span-1">
+            <Navigation isLoggedIn={isLoggedIn} logUserOut={logUserOut} />
+            </div>
             <Routes>
-                <Route
-                    path="/intro"
-                    element={<Intro />}
-                />
+                
                 <Route
                     path="/"
                     element={<Home currentUser={loggedInUser as UserType} />}
@@ -98,6 +91,42 @@ function App() {
                     element={<LogIn logUserIn={logUserIn} />}
                 />
             </Routes>
+            </div> */}
+            
+            {isLoggedIn && (
+                <div className="grid grid-cols-5">
+                <div className="col-span-1">
+            <Navigation isLoggedIn={isLoggedIn} logUserOut={logUserOut} />
+            </div>
+            <Routes>
+                
+                <Route
+                    path="/"
+                    element={<Home currentUser={loggedInUser as UserType} />}
+                />
+                <Route
+                    path="/profile"
+                    element={<Profile currentUser={loggedInUser as UserType} />}
+                />
+                <Route path="/signup" element={<SignUp />} />
+                <Route
+                    path="/login"
+                    element={<LogIn logUserIn={logUserIn} />}
+                />
+            </Routes>
+            </div>
+            )}
+
+
+            {!isLoggedIn && (
+            <Routes>
+                <Route
+                    path="/intro"
+                    element={<Intro />}
+                />
+
+            </Routes>
+            )}
         </>
     );
 }
