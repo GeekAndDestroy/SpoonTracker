@@ -28,9 +28,24 @@ function App() {
     });
 
     useEffect(() => {
-      if (!isLoggedIn && location.pathname !== '/signup' && location.pathname !== '/login') {
-        navigate('/intro');
-      }
+        if (
+            !isLoggedIn &&
+            location.pathname !== "/signup" &&
+            location.pathname !== "/login"
+        ) {
+            navigate("/intro");
+        }
+    }, [location.pathname]);
+
+    useEffect(() => {
+        if (
+            isLoggedIn &&
+            (location.pathname == "/signup" ||
+            location.pathname == "/login" ||
+            location.pathname == "/intro")
+        ) {
+            navigate("/");
+        }
     }, [location.pathname]);
 
     // useEffect(() => {
@@ -71,45 +86,51 @@ function App() {
     };
 
     return (
-        <>           
+        <>
             {isLoggedIn && (
                 <div className="grid grid-cols-5">
-                <div className="col-span-1">
-            <Navigation isLoggedIn={isLoggedIn} logUserOut={logUserOut} />
-            </div>
-            <Routes>
-                
-                <Route
-                    path="/"
-                    element={<Home currentUser={loggedInUser as UserType} />}
-                />
-                <Route
-                    path="/profile"
-                    element={<Profile currentUser={loggedInUser as UserType} />}
-                />
-                <Route
-                    path="/activitylog"
-                    element={<ActivityLog currentUser={loggedInUser as UserType} />}
-                />
-                <Route path="/signup" element={<SignUp />} />
-                <Route
-                    path="/login"
-                    element={<LogIn logUserIn={logUserIn} />}
-                />
-                
-            </Routes>
-            </div>
+                    <div className="col-span-1">
+                        <Navigation
+                            isLoggedIn={isLoggedIn}
+                            logUserOut={logUserOut}
+                        />
+                    </div>
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={
+                                <Home currentUser={loggedInUser as UserType} />
+                            }
+                        />
+                        <Route
+                            path="/profile"
+                            element={
+                                <Profile
+                                    currentUser={loggedInUser as UserType}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/activitylog"
+                            element={
+                                <ActivityLog
+                                    currentUser={loggedInUser as UserType}
+                                />
+                            }
+                        />
+                    </Routes>
+                </div>
             )}
 
-
             {!isLoggedIn && (
-            <Routes>
-                <Route
-                    path="/intro"
-                    element={<Intro />}
-                />
-
-            </Routes>
+                <Routes>
+                    <Route path="/intro" element={<Intro />} />
+                    <Route path="/signup" element={<SignUp />} />
+                    <Route
+                        path="/login"
+                        element={<LogIn logUserIn={logUserIn} />}
+                    />
+                </Routes>
             )}
         </>
     );
