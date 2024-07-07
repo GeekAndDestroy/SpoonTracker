@@ -8,11 +8,12 @@ export default function Home({}: HomeProps) {
     return (
         <div className="col-span-4 p-4">
             <PageHeader />
+            <div className="divider"></div>
             <div className="w-full items-center justify-between">
                 <div className="w-full p-2">
                     <h3 className="text-lg font-semibold">Activity Log</h3>
                 </div>
-                <div className="flex w-full p-2 rounded-lg border-gray-200 border-2 bg-sky-100 max-h-[75dvh]">
+                <div className="flex w-full p-2 rounded-lg border-gray-200 border-2 bg-sky-50 max-h-[75dvh]">
                     <div className="overflow-x-auto w-full">
                         <table className="table table-pin-rows">
                             {/* head */}
@@ -62,7 +63,7 @@ export default function Home({}: HomeProps) {
                                     <td>“Felt a little harder to do this time around”</td>
                                     <td>...</td>
                                 </tr>
-                                
+                               
                             </tbody>
                         </table>
                     </div>

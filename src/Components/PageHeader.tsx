@@ -491,7 +491,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     <form method="dialog" className="flex w-full justify-between  pt-18">
                                         {/* if there is a button in form, it will close the modal */}
                                         <button className="btn mx-2 ">Cancel</button>
-                                        <button className="btn mx-2 bg-info">Save Activity</button>
+                                        <button className="btn mx-2 bg-info text-white">Save Activity</button>
                                     </form>
                                 </div>
                             </div>

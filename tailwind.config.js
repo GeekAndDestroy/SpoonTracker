@@ -10,7 +10,7 @@ export default {
   daisyui: {
     themes: [
       {
-        mytheme: {
+        light: {
           "primary": "#E200E6",
           "secondary": "#e7e7e7",
           "accent": "#ffff00",
@@ -21,6 +21,17 @@ export default {
           "warning": "#fdb900",
           "error": "#ff8eab",
           },
+        // dark: {
+        //   "primary": "#E200E6",
+        //   "secondary": "#e7e7e7",
+        //   "accent": "#ffff00",
+        //   "neutral": "#E200E6",
+        //   "base-100": "#ffffff",
+        //   "info": "#62b2fd",
+        //   "success": "#00ff00",
+        //   "warning": "#fdb900",
+        //   "error": "#ff8eab",
+        //   },
         },
       ],
     },

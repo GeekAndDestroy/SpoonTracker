@@ -9,6 +9,7 @@ export default function Home({}: HomeProps) {
     return (
         <div className="col-span-4 p-4">
             <PageHeader />
+            <div className="divider"></div>
             <div className="w-full items-center justify-between">
                 <div className="w-full p-2">
                     <h3 className="text-lg font-semibold">
