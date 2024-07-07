@@ -10,7 +10,7 @@ type NavigationProps = {
 
 export default function Navigation({}: NavigationProps) {
     return (
-        <div className="drawer drawer-open navbar bg-info w-full">
+        <div className="drawer drawer-open navbar bg-info w-full ">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
             <div className="drawer-content flex flex-col items-center justify-center">
@@ -35,7 +35,7 @@ export default function Navigation({}: NavigationProps) {
                     className="drawer-overlay"
                 ></label>
                 <div className="grid grid-cols-1 h-4/5">
-                    <div className="flex flex-wrap">
+                    <div className="flex flex-wrap justify-center">
                         <div>
                             <ul className="menu bg-info text-white w-11/12">
                                 {/* Sidebar content here */}

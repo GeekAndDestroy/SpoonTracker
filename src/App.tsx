@@ -71,29 +71,7 @@ function App() {
     };
 
     return (
-        <>
-            {/* <div className="grid grid-cols-5">
-                <div className="col-span-1">
-            <Navigation isLoggedIn={isLoggedIn} logUserOut={logUserOut} />
-            </div>
-            <Routes>
-                
-                <Route
-                    path="/"
-                    element={<Home currentUser={loggedInUser as UserType} />}
-                />
-                <Route
-                    path="/profile"
-                    element={<Profile currentUser={loggedInUser as UserType} />}
-                />
-                <Route path="/signup" element={<SignUp />} />
-                <Route
-                    path="/login"
-                    element={<LogIn logUserIn={logUserIn} />}
-                />
-            </Routes>
-            </div> */}
-            
+        <>           
             {isLoggedIn && (
                 <div className="grid grid-cols-5">
                 <div className="col-span-1">
@@ -118,6 +96,7 @@ function App() {
                     path="/login"
                     element={<LogIn logUserIn={logUserIn} />}
                 />
+                
             </Routes>
             </div>
             )}

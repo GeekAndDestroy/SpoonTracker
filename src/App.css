@@ -1,3 +1,7 @@
 .rotate90 {
     transform: rotate(-90deg);
 }
+.radio-xl {
+    width: 35px;
+    height: 35px; 
+}
