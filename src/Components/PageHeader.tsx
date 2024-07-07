@@ -276,11 +276,224 @@ export default function PageHeader({}: PageHeaderProps) {
                                     </label>
                                 </li>  
                             </ul>
-                            <div className="modal-action">
-                                <form method="dialog">
-                                    {/* if there is a button in form, it will close the modal */}
-                                    <button className="btn">Close</button>
-                                </form>
+                            <p className="text-medium my-4">
+                                How long did it take? (aprox.)
+                            </p>
+                            <ul className="flex gap-1">
+                                <li>
+                                    <input
+                                        type="radio"
+                                        id="15min"
+                                        name="activity_length"
+                                        value="15min"
+                                        className="hidden peer"
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="activity_length"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
+                                    >
+                                        <div className="flex justify-center">
+                                            <div className="w-full text-base font-semibold">
+                                                15 mins
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input
+                                        type="radio"
+                                        id="30min"
+                                        name="activity_length"
+                                        value="30min"
+                                        className="hidden peer"
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="activity_length"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
+                                    >
+                                        <div className="flex justify-center">
+                                            <div className="w-full text-base font-semibold">
+                                            30 mins
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input
+                                        type="radio"
+                                        id="45min"
+                                        name="activity_length"
+                                        value="45min"
+                                        className="hidden peer"
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="activity_length"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
+                                    >
+                                        <div className="flex justify-center">
+                                            <div className="w-full text-base font-semibold">
+                                            45 mins
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li> 
+                                <li>
+                                    <input
+                                        type="radio"
+                                        id="1hr"
+                                        name="activity_length"
+                                        value="1hr"
+                                        className="hidden peer"
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="activity_length"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
+                                    >
+                                        <div className="flex justify-center">
+                                            <div className="w-full text-base font-semibold">
+                                            1 hr
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input
+                                        type="radio"
+                                        id="1hr+"
+                                        name="activity_length"
+                                        value="1hr+"
+                                        className="hidden peer"
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="activity_length"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
+                                    >
+                                        <div className="flex justify-center">
+                                            <div className="w-full text-base font-semibold">
+                                            1 hr+
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+                            <p className="text-medium my-4">
+                                What time of day?
+                            </p>
+                            <ul className="flex gap-1">
+                                <li>
+                                    <input
+                                        type="radio"
+                                        id="EM"
+                                        name="activity_time"
+                                        value="EM"
+                                        className="hidden peer"
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="activity_time"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
+                                    >
+                                        <div className="flex justify-center">
+                                            <div className="w-full text-base font-semibold">
+                                                Early Morning
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input
+                                        type="radio"
+                                        id="M"
+                                        name="activity_time"
+                                        value="M"
+                                        className="hidden peer"
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="activity_time"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
+                                    >
+                                        <div className="flex justify-center">
+                                            <div className="w-full text-base font-semibold">
+                                            Morning
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input
+                                        type="radio"
+                                        id="A"
+                                        name="activity_time"
+                                        value="A"
+                                        className="hidden peer"
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="activity_time"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
+                                    >
+                                        <div className="flex justify-center">
+                                            <div className="w-full text-base font-semibold">
+                                            Afternoon
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li> 
+                                <li>
+                                    <input
+                                        type="radio"
+                                        id="E"
+                                        name="activity_time"
+                                        value="E"
+                                        className="hidden peer"
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="activity_time"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
+                                    >
+                                        <div className="flex justify-center">
+                                            <div className="w-full text-base font-semibold">
+                                            Evening
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input
+                                        type="radio"
+                                        id="LE"
+                                        name="activity_time"
+                                        value="LE"
+                                        className="hidden peer"
+                                        required
+                                    />
+                                    <label
+                                        htmlFor="activity_time"
+                                        className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
+                                    >
+                                        <div className="flex justify-center">
+                                            <div className="w-full text-base font-semibold">
+                                            Late Evening
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+                            <div className="w-full">
+                                <div className="modal-action mt-20">
+                                    <form method="dialog" className="flex w-full justify-between  pt-18">
+                                        {/* if there is a button in form, it will close the modal */}
+                                        <button className="btn mx-2 ">Cancel</button>
+                                        <button className="btn mx-2 bg-info">Save Activity</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </dialog>
