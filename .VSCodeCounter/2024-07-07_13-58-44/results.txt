@@ -1,0 +1,85 @@
+Date : 2024-07-07 13:58:44
+Directory : /Users/jeffchebul/Documents/CoLab/spoontracker
+Total : 43 files,  5730 codes, 31 comments, 106 blanks, all 5867 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          4 |      4,437 |          2 |          6 |      4,445 |
+| TypeScript JSX     |         11 |      1,052 |         26 |         68 |      1,146 |
+| XML                |         17 |        109 |          0 |         13 |        122 |
+| JavaScript         |          3 |         54 |          1 |          4 |         59 |
+| TypeScript         |          3 |         22 |          2 |          4 |         28 |
+| Markdown           |          1 |         22 |          0 |          9 |         31 |
+| HTML               |          1 |         13 |          0 |          1 |         14 |
+| JSON with Comments |          1 |         11 |          0 |          1 |         12 |
+| CSS                |          2 |         10 |          0 |          0 |         10 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                 | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                    |         43 |      5,730 |         31 |        106 |      5,867 |
+| . (Files)                                                                            |         11 |      4,542 |          4 |         23 |      4,569 |
+| public                                                                               |          1 |          1 |          0 |          0 |          1 |
+| src                                                                                  |         31 |      1,187 |         27 |         83 |      1,297 |
+| src (Files)                                                                          |          5 |        110 |         16 |         19 |        145 |
+| src/Components                                                                       |          3 |        589 |          4 |         15 |        608 |
+| src/Views                                                                            |          6 |        363 |          7 |         35 |        405 |
+| src/assets                                                                           |         16 |        108 |          0 |         13 |        121 |
+| src/assets (Files)                                                                   |          1 |          1 |          0 |          0 |          1 |
+| src/assets/icons                                                                     |         15 |        107 |          0 |         13 |        120 |
+| src/types                                                                            |          1 |         17 |          0 |          1 |         18 |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                             | language           | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| /Users/jeffchebul/Documents/CoLab/spoontracker/.eslintrc.cjs                         | JavaScript         |         18 |          0 |          1 |         19 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/README.md                             | Markdown           |         22 |          0 |          9 |         31 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/index.html                            | HTML               |         13 |          0 |          1 |         14 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/package-lock.json                     | JSON               |      4,367 |          0 |          1 |      4,368 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/package.json                          | JSON               |         34 |          0 |          1 |         35 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/postcss.config.js                     | JavaScript         |          6 |          0 |          1 |          7 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/public/vite.svg                       | XML                |          1 |          0 |          0 |          1 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/App.css                           | CSS                |          7 |          0 |          0 |          7 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/App.tsx                           | TypeScript JSX     |         88 |         15 |         16 |        119 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/Components/ActivityCard.tsx       | TypeScript JSX     |         12 |          0 |          4 |         16 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/Components/Navigation.tsx         | TypeScript JSX     |         76 |          3 |          7 |         86 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/Components/PageHeader.tsx         | TypeScript JSX     |        501 |          1 |          4 |        506 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/Views/ActivityLog.tsx             | TypeScript JSX     |         65 |          4 |          4 |         73 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/Views/Home.tsx                    | TypeScript JSX     |         63 |          0 |          4 |         67 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/Views/Intro.tsx                   | TypeScript JSX     |        104 |          0 |          9 |        113 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/Views/Login.tsx                   | TypeScript JSX     |         33 |          0 |          5 |         38 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/Views/Profile.tsx                 | TypeScript JSX     |          7 |          0 |          3 |         10 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/Views/SignUp.tsx                  | TypeScript JSX     |         91 |          3 |         10 |        104 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/buying.svg           | XML                |          9 |          0 |          1 |         10 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/customer_insight.svg | XML                |          9 |          0 |          1 |         10 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/cutlery.svg          | XML                |          9 |          0 |          1 |         10 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/dashboard.svg        | XML                |          6 |          0 |          1 |          7 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/exports.svg          | XML                |          4 |          0 |          1 |          5 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/eye.svg              | XML                |          1 |          0 |          0 |          1 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/eyeoff.svg           | XML                |          1 |          0 |          0 |          1 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/graph.svg            | XML                |          9 |          0 |          1 |         10 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/insight.svg          | XML                |          9 |          0 |          1 |         10 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/plus_math.svg        | XML                |          9 |          0 |          1 |         10 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/predictions.svg      | XML                |          5 |          0 |          1 |          6 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/settings.svg         | XML                |          9 |          0 |          1 |         10 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/shower.svg           | XML                |          9 |          0 |          1 |         10 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/spoon.svg            | XML                |          9 |          0 |          1 |         10 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/icons/toothbrush.svg       | XML                |          9 |          0 |          1 |         10 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/assets/react.svg                  | XML                |          1 |          0 |          0 |          1 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/index.css                         | CSS                |          3 |          0 |          0 |          3 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/main.tsx                          | TypeScript JSX     |         12 |          0 |          2 |         14 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/types/index.ts                    | TypeScript         |         17 |          0 |          1 |         18 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/src/vite-env.d.ts                     | TypeScript         |          0 |          1 |          1 |          2 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/tailwind.config.js                    | JavaScript         |         30 |          1 |          2 |         33 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/tsconfig.app.json                     | JSON               |         23 |          2 |          3 |         28 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/tsconfig.json                         | JSON with Comments |         11 |          0 |          1 |         12 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/tsconfig.node.json                    | JSON               |         13 |          0 |          1 |         14 |
+| /Users/jeffchebul/Documents/CoLab/spoontracker/vite.config.ts                        | TypeScript         |          5 |          1 |          2 |          8 |
+| Total                                                                                |                    |      5,730 |         31 |        106 |      5,867 |
++--------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

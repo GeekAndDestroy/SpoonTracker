@@ -279,7 +279,7 @@ export default function PageHeader({}: PageHeaderProps) {
                             <p className="text-medium my-4">
                                 How long did it take? (aprox.)
                             </p>
-                            <ul className="flex gap-1">
+                            <ul className="flex flex-wrap gap-4">
                                 <li>
                                     <input
                                         type="radio"
@@ -294,7 +294,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                         className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
                                     >
                                         <div className="flex justify-center">
-                                            <div className="w-full text-base font-semibold">
+                                            <div className="w-full text-base font-semibold mx-4">
                                                 15 mins
                                             </div>
                                         </div>
@@ -314,7 +314,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                         className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
                                     >
                                         <div className="flex justify-center">
-                                            <div className="w-full text-base font-semibold">
+                                            <div className="w-full text-base font-semibold mx-4">
                                             30 mins
                                             </div>
                                         </div>
@@ -334,7 +334,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                         className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
                                     >
                                         <div className="flex justify-center">
-                                            <div className="w-full text-base font-semibold">
+                                            <div className="w-full text-base font-semibold mx-4">
                                             45 mins
                                             </div>
                                         </div>
@@ -354,7 +354,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                         className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
                                     >
                                         <div className="flex justify-center">
-                                            <div className="w-full text-base font-semibold">
+                                            <div className="w-full text-base font-semibold mx-4">
                                             1 hr
                                             </div>
                                         </div>
@@ -374,7 +374,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                         className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
                                     >
                                         <div className="flex justify-center">
-                                            <div className="w-full text-base font-semibold">
+                                            <div className="w-full text-base font-semibold mx-4">
                                             1 hr+
                                             </div>
                                         </div>
@@ -384,7 +384,7 @@ export default function PageHeader({}: PageHeaderProps) {
                             <p className="text-medium my-4">
                                 What time of day?
                             </p>
-                            <ul className="flex gap-1">
+                            <ul className="flex flex-wrap gap-4">
                                 <li>
                                     <input
                                         type="radio"
@@ -399,7 +399,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                         className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
                                     >
                                         <div className="flex justify-center">
-                                            <div className="w-full text-base font-semibold">
+                                            <div className="w-full text-base font-semibold mx-4">
                                                 Early Morning
                                             </div>
                                         </div>
@@ -419,7 +419,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                         className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
                                     >
                                         <div className="flex justify-center">
-                                            <div className="w-full text-base font-semibold">
+                                            <div className="w-full text-base font-semibold mx-4">
                                             Morning
                                             </div>
                                         </div>
@@ -439,7 +439,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                         className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
                                     >
                                         <div className="flex justify-center">
-                                            <div className="w-full text-base font-semibold">
+                                            <div className="w-full text-base font-semibold mx-4">
                                             Afternoon
                                             </div>
                                         </div>
@@ -459,7 +459,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                         className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
                                     >
                                         <div className="flex justify-center">
-                                            <div className="w-full text-base font-semibold">
+                                            <div className="w-full text-base font-semibold mx-4">
                                             Evening
                                             </div>
                                         </div>
@@ -479,7 +479,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                         className="inline-flex items-center justify-between p-2 rounded-full cursor-pointer  dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 border-2 "
                                     >
                                         <div className="flex justify-center">
-                                            <div className="w-full text-base font-semibold">
+                                            <div className="w-full text-base font-semibold mx-4">
                                             Late Evening
                                             </div>
                                         </div>
