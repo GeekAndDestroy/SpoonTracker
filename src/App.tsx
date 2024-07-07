@@ -9,6 +9,7 @@ import Profile from "./Views/Profile";
 import Navigation from "./Components/Navigation";
 import Intro from "./Views/Intro";
 import LogIn from "./Views/Login";
+import ActivityLog from "./Views/ActivityLog";
 
 function App() {
     const location = useLocation();
@@ -107,6 +108,10 @@ function App() {
                 <Route
                     path="/profile"
                     element={<Profile currentUser={loggedInUser as UserType} />}
+                />
+                <Route
+                    path="/activitylog"
+                    element={<ActivityLog currentUser={loggedInUser as UserType} />}
                 />
                 <Route path="/signup" element={<SignUp />} />
                 <Route

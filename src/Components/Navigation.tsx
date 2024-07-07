@@ -40,7 +40,7 @@ export default function Navigation({}: NavigationProps) {
                             <ul className="menu bg-info text-white w-11/12">
                                 {/* Sidebar content here */}
                                 <li>
-                                    <a>
+                                    <a href="/">
                                         <img src={dashboard}></img>Dashboard
                                     </a>
                                 </li>
