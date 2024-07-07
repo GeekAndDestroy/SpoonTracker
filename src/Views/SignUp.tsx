@@ -65,7 +65,7 @@ export default function SignUp({}: SignUpProps) {
                         onChange={handleInputChange}
                         className="input input-bordered m-2"
                     />
-                    <label  className="input input-bordered flex items-center  m-2">
+                    <label  className={userFormData.password !== userFormData.confirm_password ? "input input-bordered flex items-center border-red-500 m-2" : "input input-bordered flex items-center m-2" }>
                         <input
                             // type='password'
                             type={seePassword ? 'text' : 'password'}
@@ -78,8 +78,10 @@ export default function SignUp({}: SignUpProps) {
                         <img src={seePassword ? eyeoff : eye} onClick={() => setSeePassword(!seePassword)} />
                     </label>
                     
-                    {userFormData.password !== userFormData.confirm_password && <p className="text-red-500 m-2">*Passwords do not match</p>}
-                    <label  className="input input-bordered flex items-center  m-2">
+
+                    
+                    {/* <label  className="input input-bordered flex items-center border-red-500 m-2"> */}
+                    <label  className={userFormData.password !== userFormData.confirm_password ? "input input-bordered flex items-center border-red-500 m-2" : "input input-bordered flex items-center m-2" }>
                         <input
                             // type='password'
                             type={seeConfirmPassword ? 'text' : 'password'}
@@ -91,6 +93,9 @@ export default function SignUp({}: SignUpProps) {
                         />
                         <img src={seeConfirmPassword ? eyeoff : eye} onClick={() => setSeeConfirmPassword(!seeConfirmPassword)} />
                     </label>
+                    
+                    {userFormData.password !== userFormData.confirm_password && <p className="text-red-500 m-2 text-xs">*Passwords do not match</p>}
+
                     <button className="btn my-8 mx-auto py-8 px-16 content-center bg-info w-1/2 text-white" disabled={disableSubmit}>
                         Sign Up
                     </button>
