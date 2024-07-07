@@ -75,7 +75,7 @@ export default function SignUp({}: SignUpProps) {
                             onChange={handleInputChange}
                             className="grow"
                         />
-                        <img src={seePassword ? eyeoff : eye} onClick={() => setSeePassword(!seePassword)} />
+                        <img src={seePassword ? eye : eyeoff} onClick={() => setSeePassword(!seePassword)} />
                     </label>
                     
 
@@ -91,9 +91,9 @@ export default function SignUp({}: SignUpProps) {
                             onChange={handleInputChange}
                             className="grow"
                         />
-                        <img src={seeConfirmPassword ? eyeoff : eye} onClick={() => setSeeConfirmPassword(!seeConfirmPassword)} />
+                        <img src={seeConfirmPassword ? eye : eyeoff} onClick={() => setSeeConfirmPassword(!seeConfirmPassword)} />
                     </label>
-                    
+
                     {userFormData.password !== userFormData.confirm_password && <p className="text-red-500 m-2 text-xs">*Passwords do not match</p>}
 
                     <button className="btn my-8 mx-auto py-8 px-16 content-center bg-info w-1/2 text-white" disabled={disableSubmit}>

@@ -50,7 +50,7 @@ export default function LogIn({  }: LogInProps) {
                             onChange={handleInputChange}
                             className="grow"
                         />
-                        <img src={seePassword ? eyeoff : eye} onClick={() => setSeePassword(!seePassword)} />
+                        <img src={seePassword ? eye : eyeoff } onClick={() => setSeePassword(!seePassword)} />
                     </label>
                     <button className="btn my-8 mx-auto py-8 px-16 content-center bg-info text-white w-1/2">
                         Log In
