@@ -12,9 +12,9 @@ export default function Home({}: HomeProps) {
                 <div className="w-full p-2">
                     <h3 className="text-lg font-semibold">Activity Log</h3>
                 </div>
-                <div className="flex w-full p-2 rounded-lg border-gray-200 border-2">
+                <div className="flex w-full p-2 rounded-lg border-gray-200 border-2 bg-sky-100 max-h-[75dvh]">
                     <div className="overflow-x-auto w-full">
-                        <table className="table">
+                        <table className="table table-pin-rows">
                             {/* head */}
                             <thead>
                                 <tr className="bg-gray-100 rounded-lg text-bold text-black border-2">
@@ -28,7 +28,7 @@ export default function Home({}: HomeProps) {
                             </thead>
                             <tbody>
                                 {/* row 1 */}
-                                <tr>
+                                <tr className="hover">
                                     <td>June 30th</td>
                                     <td>10 am</td>
                                     <td className="text-semibold text-lg">Shower</td>
@@ -37,7 +37,7 @@ export default function Home({}: HomeProps) {
                                     <td>...</td>
                                 </tr>
                                 {/* row 2 */}
-                                <tr>
+                                <tr className="hover">
                                     <td>June 30th</td>
                                     <td>11 am</td>
                                     <td className="text-semibold text-lg">Brush Teeth</td>
@@ -46,7 +46,7 @@ export default function Home({}: HomeProps) {
                                     <td>...</td>
                                 </tr>
                                 {/* row 3 */}
-                                <tr>
+                                <tr className="hover">
                                     <td>June 30th</td>
                                     <td>2 pm</td>
                                     <td className="text-semibold text-lg">Groceries</td>
@@ -54,7 +54,7 @@ export default function Home({}: HomeProps) {
                                     <td>“Felt a little harder to do this time around”</td>
                                     <td>...</td>
                                 </tr>
-                                <tr>
+                                <tr className="hover">
                                     <td>June 30th</td>
                                     <td>4 pm</td>
                                     <td className="text-semibold text-lg">Ate</td>
@@ -62,6 +62,7 @@ export default function Home({}: HomeProps) {
                                     <td>“Felt a little harder to do this time around”</td>
                                     <td>...</td>
                                 </tr>
+                                
                             </tbody>
                         </table>
                     </div>

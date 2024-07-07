@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { UserFormDataType } from "../types";
+import eye from "../assets/icons/eye.svg";
+import eyeoff from "../assets/icons/eyeoff.svg";
 
 
 type SignUpProps = {};
@@ -15,7 +17,8 @@ export default function SignUp({}: SignUpProps) {
         }
     );
 
-    // const [seePassword, setSeePassword] = useState(false);
+    const [seePassword, setSeePassword] = useState(false);
+    const [seeConfirmPassword, setSeeConfirmPassword] = useState(false);
 
     const disableSubmit =
         (userFormData.password?.length ?? 0) < 5 ||
@@ -62,34 +65,32 @@ export default function SignUp({}: SignUpProps) {
                         onChange={handleInputChange}
                         className="input input-bordered m-2"
                     />
-                    <input
-                        type="text"
-                        name="username"
-                        placeholder="Username"
-                        value={userFormData.username}
-                        onChange={handleInputChange}
-                        className="input input-bordered m-2"
-                    />
-                    <input
-                        type='password'
-                        // type={seePassword ? 'text' : 'password'}
-                        name="password"
-                        placeholder="Password"
-                        value={userFormData.password}
-                        onChange={handleInputChange}
-                        className="input input-bordered m-2"
-                    />
+                    <label  className="input input-bordered flex items-center  m-2">
+                        <input
+                            // type='password'
+                            type={seePassword ? 'text' : 'password'}
+                            name="password"
+                            placeholder="Password"
+                            value={userFormData.password}
+                            onChange={handleInputChange}
+                            className="grow"
+                        />
+                        <img src={seePassword ? eyeoff : eye} onClick={() => setSeePassword(!seePassword)} />
+                    </label>
                     
                     {userFormData.password !== userFormData.confirm_password && <p className="text-red-500 m-2">*Passwords do not match</p>}
-                    <input
-                        type='password'
-                        // type={seePassword ? 'text' : 'password'}
-                        name="confirm_password"
-                        placeholder="Confirm Password"
-                        value={userFormData.confirm_password}
-                        onChange={handleInputChange}
-                        className="input input-bordered m-2"
-                    />
+                    <label  className="input input-bordered flex items-center  m-2">
+                        <input
+                            // type='password'
+                            type={seeConfirmPassword ? 'text' : 'password'}
+                            name="confirm_password"
+                            placeholder="Confirm Password"
+                            value={userFormData.confirm_password}
+                            onChange={handleInputChange}
+                            className="grow"
+                        />
+                        <img src={seeConfirmPassword ? eyeoff : eye} onClick={() => setSeeConfirmPassword(!seeConfirmPassword)} />
+                    </label>
                     <button className="btn my-8 mx-auto py-8 px-16 content-center bg-info w-1/2 text-white" disabled={disableSubmit}>
                         Sign Up
                     </button>
