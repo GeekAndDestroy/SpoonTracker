@@ -4,11 +4,11 @@ import exports from "../assets/icons/exports.svg";
 import settings from "../assets/icons/settings.svg";
 
 type NavigationProps = {
-    isLoggedIn: boolean;
+
     logUserOut: () => void;
 };
 
-export default function Navigation({}: NavigationProps) {
+export default function Navigation({ logUserOut }: NavigationProps) {
     return (
         <div className="drawer drawer-open navbar bg-info w-full ">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -67,7 +67,7 @@ export default function Navigation({}: NavigationProps) {
                                     </a>
                                 </li>
                                 <li>
-                                    <a>
+                                    <a onClick={logUserOut}>
                                         <img
                                             src={exports}
                                             className="rotate90"

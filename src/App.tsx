@@ -82,7 +82,7 @@ function App() {
             token: "",
             user_id: NaN,
         });
-        navigate("/login");
+        navigate("/intro");
     };
 
     return (
@@ -91,7 +91,7 @@ function App() {
                 <div className="grid grid-cols-5">
                     <div className="col-span-1">
                         <Navigation
-                            isLoggedIn={isLoggedIn}
+                            
                             logUserOut={logUserOut}
                         />
                     </div>
