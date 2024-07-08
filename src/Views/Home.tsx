@@ -16,13 +16,13 @@ export default function Home({}: HomeProps) {
                         Today's Activity Log
                     </h3>
                 </div>
-                <div className="flex w-full gap-2 p-2 overflow-y-auto">
+                <div className="flex flex-wrap md:flex-nowrap w-full gap-2 p-2 md:overflow-y-auto">
                     <ActivityCard />
                     <ActivityCard />
                     <ActivityCard />
                     <ActivityCard />
                     <ActivityCard />
-                    <div className="flex h-48  p-4 items-center justify-items-center">
+                    <div className="flex h-28 md:h-48 w-28 md:min-w-48  p-4 items-center justify-items-center">
                         <a
                             className="btn  text-base m-auto"
                             href="./activitylog"
