@@ -10,10 +10,10 @@ type NavigationProps = {
 
 export default function Navigation({ logUserOut }: NavigationProps) {
     return (
-        <div className="drawer drawer-open navbar bg-info w-full ">
+        <div className="flex drawer drawer-open navbar bg-info w-full  justify-center">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
-            <div className="drawer-content flex flex-col items-center justify-center">
+            {/* <div className="drawer-content flex flex-col items-center justify-center">
                 
                 <label
                     htmlFor="my-drawer-2"
@@ -21,7 +21,7 @@ export default function Navigation({ logUserOut }: NavigationProps) {
                 >
                     Open drawer
                 </label>
-            </div>
+            </div> */}
 
             <div className="drawer-side">
                 <div className="flex flex-col items-center justify-center">
@@ -34,24 +34,24 @@ export default function Navigation({ logUserOut }: NavigationProps) {
                     aria-label="close sidebar"
                     className="drawer-overlay"
                 ></label>
-                <div className="grid grid-cols-1 h-4/5">
+                <div className="grid grid-cols-1 h-4/5 justify-center">
                     <div className="flex flex-wrap justify-center">
-                        <div>
-                            <ul className="menu bg-info text-white w-11/12">
+                        <div className="flex w-full justify-center">
+                            <ul className="menu bg-info text-white ">
                                 {/* Sidebar content here */}
                                 <li>
                                     <a href="/">
-                                        <img src={dashboard}></img>Dashboard
+                                        <img src={dashboard}></img><p className="hidden md:block">Dashboard</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a>
-                                        <img src={insight}></img>Insights
+                                        <img src={insight}></img><p className="hidden md:block">Insights</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a>
-                                        <img src={exports}></img>Share/Export
+                                        <img src={exports}></img><p className="hidden md:block">Share/Export</p>
                                     </a>
                                 </li>
                             </ul>
@@ -63,7 +63,7 @@ export default function Navigation({ logUserOut }: NavigationProps) {
 
                                 <li>
                                     <a>
-                                        <img src={settings}></img>Settings
+                                        <img src={settings}></img><p className="hidden md:block">Settings</p>
                                     </a>
                                 </li>
                                 <li>
@@ -72,7 +72,7 @@ export default function Navigation({ logUserOut }: NavigationProps) {
                                             src={exports}
                                             className="rotate90"
                                         ></img>
-                                        Log Out
+                                        <p className="hidden md:block">Log Out</p>
                                     </a>
                                 </li>
                             </ul>

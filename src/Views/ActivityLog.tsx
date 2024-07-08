@@ -13,7 +13,7 @@ export default function Home({}: HomeProps) {
                 <div className="w-full p-2">
                     <h3 className="text-lg font-semibold">Activity Log</h3>
                 </div>
-                <div className="flex w-full p-2 rounded-lg border-gray-200 border-2 bg-sky-50 max-h-[75dvh]">
+                <div className="flex w-full p-2 rounded-lg border-gray-200 border-2 bg-sky-50 max-h-[75vh]">
                     <div className="overflow-x-auto w-full">
                         <table className="table table-pin-rows">
                             {/* head */}
