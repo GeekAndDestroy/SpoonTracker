@@ -10,7 +10,7 @@ type NavigationProps = {
 
 export default function Navigation({ logUserOut }: NavigationProps) {
     return (
-        <div className="flex drawer drawer-open navbar bg-info w-full  justify-center">
+        <div className="flex drawer drawer-open navbar bg-info w-full  justify-center sticky inset-x-0 top-0 z-50">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
             {/* <div className="drawer-content flex flex-col items-center justify-center">
