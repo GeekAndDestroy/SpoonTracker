@@ -24,7 +24,7 @@ export default function PageHeader({}: PageHeaderProps) {
                     </button>
 
                     <dialog id="logActivity_modal" className="modal">
-                        <div className="modal-box">
+                        <div className="modal-box max-w-[750px] w-full md:w-3/4">
                             <h3 className="font-bold text-lg">Log Activity</h3>
                             <input
                                 type="text"
@@ -34,7 +34,7 @@ export default function PageHeader({}: PageHeaderProps) {
                             <p className="text-medium my-4">
                                 How many spoons did you consume?
                             </p>
-                            <ul className="flex gap-1">
+                            <ul className="flex w-full justify-around gap-1">
                                 <li>
                                     <input
                                         type="radio"
@@ -279,7 +279,7 @@ export default function PageHeader({}: PageHeaderProps) {
                             <p className="text-medium my-4">
                                 How long did it take? (aprox.)
                             </p>
-                            <ul className="flex flex-wrap gap-4">
+                            <ul className="flex flex-wrap  w-full justify-around gap-4">
                                 <li>
                                     <input
                                         type="radio"
@@ -384,7 +384,7 @@ export default function PageHeader({}: PageHeaderProps) {
                             <p className="text-medium my-4">
                                 What time of day?
                             </p>
-                            <ul className="flex flex-wrap gap-4">
+                            <ul className="flex flex-wrap w-full justify-around gap-4">
                                 <li>
                                     <input
                                         type="radio"
@@ -486,8 +486,14 @@ export default function PageHeader({}: PageHeaderProps) {
                                     </label>
                                 </li>
                             </ul>
+
+                            <p className="text-medium my-4">
+                                How did it go?
+                            </p>
+                            <textarea className="textarea textarea-bordered w-full min-h-18" placeholder="Add any extra details you would like to remember about this activity."></textarea>
+
                             <div className="w-full">
-                                <div className="modal-action mt-20">
+                                <div className="modal-action mt-4">
                                     <form method="dialog" className="flex w-full justify-between  pt-18">
                                         {/* if there is a button in form, it will close the modal */}
                                         <button className="btn mx-2 ">Cancel</button>
@@ -495,6 +501,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     </form>
                                 </div>
                             </div>
+                            
                         </div>
                     </dialog>
 

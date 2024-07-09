@@ -1,3 +1,8 @@
+import graph from "../assets/icons/graph.svg";
+import insight_dark from "../assets/icons/insight_dark.svg";
+import customer_insight from "../assets/icons/customer_insight.svg";
+
+
 type IntroProps = {};
 
 export default function Intro({}: IntroProps) {
@@ -58,41 +63,41 @@ export default function Intro({}: IntroProps) {
 
                 <div className="w-10/12 mx-auto">
                     <h3 className="text-2xl font-bold text-left">A few features</h3>
-                <div className="grid grid-cols-3 gap-24">
-                    <div className="card bg-base-100 ">
+                <div className="grid grid-cols-3 gap-24 mt-8">
+                    <div className="card bg-base-100 border-4 ">
                         <figure className="pt-10">
                             <img
-                                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                                alt="Shoes"
+                                src={graph}
+                                alt="Graph"
                                 className=""
                             />
                         </figure>
                         <div className="card-body items-center text-left">
-                            <p className="text-lg">Track and manage your energy</p>
+                            <p className="text-lg text-center">Track and manage your energy</p>
                         </div>
                     </div>
-                    <div className="card bg-base-100 ">
+                    <div className="card bg-base-100 border-4 ">
                         <figure className="pt-10">
                             <img
-                                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                                src={insight_dark}
                                 alt="Shoes"
                                 className=""
                             />
                         </figure>
                         <div className="card-body items-center text-left">
-                            <p className="text-lg">View in-depth insights and recommendations</p>
+                            <p className="text-lg text-center">View in-depth insights and recommendations</p>
                         </div>
                     </div>
-                    <div className="card bg-base-100 ">
+                    <div className="card bg-base-100 border-4 ">
                         <figure className="pt-10">
                             <img
-                                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                                src={customer_insight}
                                 alt="Shoes"
                                 className=""
                             />
                         </figure>
                         <div className="card-body items-center text-left">
-                            <p className="text-lg">Share discoveries with those around you</p>
+                            <p className="text-lg text-center">Share discoveries with those around you</p>
                         </div>
                     </div>
                 </div>   
