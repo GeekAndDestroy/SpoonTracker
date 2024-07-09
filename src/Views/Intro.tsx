@@ -61,9 +61,9 @@ export default function Intro({}: IntroProps) {
                     </div>
                 </div>
 
-                <div className="w-10/12 mx-auto">
+                <div className="w-1/2 md:w-10/12 mx-auto">
                     <h3 className="text-2xl font-bold text-left">A few features</h3>
-                <div className="grid grid-cols-3 gap-24 mt-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-24 mt-8">
                     <div className="card bg-base-100 border-4 ">
                         <figure className="pt-10">
                             <img
@@ -73,7 +73,7 @@ export default function Intro({}: IntroProps) {
                             />
                         </figure>
                         <div className="card-body items-center text-left">
-                            <p className="text-lg text-center">Track and manage your energy</p>
+                            <p className="text-lg text-center">Track and manage your energy daily.</p>
                         </div>
                     </div>
                     <div className="card bg-base-100 border-4 ">
@@ -85,7 +85,7 @@ export default function Intro({}: IntroProps) {
                             />
                         </figure>
                         <div className="card-body items-center text-left">
-                            <p className="text-lg text-center">View in-depth insights and recommendations</p>
+                            <p className="text-lg text-center">View in-depth insights and recommendations.</p>
                         </div>
                     </div>
                     <div className="card bg-base-100 border-4 ">
@@ -97,7 +97,7 @@ export default function Intro({}: IntroProps) {
                             />
                         </figure>
                         <div className="card-body items-center text-left">
-                            <p className="text-lg text-center">Share discoveries with those around you</p>
+                            <p className="text-lg text-center">Share discoveries with those around you.</p>
                         </div>
                     </div>
                 </div>   

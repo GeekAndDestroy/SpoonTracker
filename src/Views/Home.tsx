@@ -1,6 +1,7 @@
 import { UserType } from "../types";
 import PageHeader from "../Components/PageHeader";
 import ActivityCard from "../Components/ActivityCard";
+import Chart from "../Components/Chart";
 
 
 type HomeProps = { currentUser: UserType };
@@ -41,7 +42,7 @@ export default function Home({}: HomeProps) {
                 <div className="grid grid-cols-5 w-full gap-4 p-2">
                     <div className="col-span-5 md:col-span-3 gap-4">
                         <div className="col-span-5 md:col-span-3 border-2 border-gray-300 rounded-lg p-2 bg-sky-50 h-96">
-                            Graph
+                            <Chart />
                         </div>
                         <div className="flex justify-between w-full gap-4 col-span-5 md:col-span-3 mt-4">
                             <div className="border-2 w-1/3 border-gray-300 rounded-lg p-2 bg-sky-50 h-24">
