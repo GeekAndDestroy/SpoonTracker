@@ -18,7 +18,9 @@ export default function PageHeader({}: PageHeaderProps) {
                         role="button"
                         className="btn m-1 bg-info text-white text-base"
                     >
-                        <img src={plus}/> <p className="ml-2 hidden md:block">Log</p> <img src={caret_down} className="hidden md:block"/>
+                        <img src={plus} />{" "}
+                        <p className="ml-2 hidden md:block">Log</p>{" "}
+                        <img src={caret_down} className="hidden md:block" />
                     </div>
 
                     <ul
@@ -571,6 +573,14 @@ export default function PageHeader({}: PageHeaderProps) {
                     <div className="modal-box max-w-[750px] w-full md:w-3/4">
                         <h3 className="font-bold text-lg">Log Flare Up</h3>
 
+                        <p className="text-medium my-4">
+                            Please describe what you are experiencing (optional)
+                        </p>
+                        <textarea
+                            className="textarea textarea-bordered w-full min-h-36"
+                            placeholder="Add any extra details you would like to remember about this."
+                        ></textarea>
+
                         {/* <div className="flex gap-2 m-2">
                             <div className="flex w-1/2 border-2 rounded-lg p-2 bg-sky-50">
                                 <div>Spoons</div>
@@ -598,9 +608,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     className="flex w-full justify-between  pt-18"
                                 >
                                     {/* if there is a button in form, it will close the modal */}
-                                    <button className="btn mx-2">
-                                        Cancel
-                                    </button>
+                                    <button className="btn mx-2">Cancel</button>
                                     <button className="btn mx-2 bg-info text-white">
                                         Save Changes
                                     </button>
@@ -618,8 +626,8 @@ export default function PageHeader({}: PageHeaderProps) {
 
                         <div className="flex gap-2 m-2">
                             <div className="flex w-1/2 border-2 rounded-lg p-2 bg-sky-50">
-                                <div>Spoons</div>
-                                <div
+                                <span className="w-full">Spoons</span>
+                                {/* <div
                                     className="radial-progress"
                                     style={{
                                         "--value": "70",
@@ -629,6 +637,46 @@ export default function PageHeader({}: PageHeaderProps) {
                                     role="progressbar"
                                 >
                                     70%
+                                </div> */}
+                                <div className="relative w-40 h-40">
+                                    <svg
+                                        className="w-full h-full"
+                                        viewBox="0 0 100 100"
+                                    >
+                                        {/* <!-- Background circle --> */}
+                                        <circle
+                                            className="text-gray-200 stroke-current"
+                                            stroke-width="10"
+                                            cx="50"
+                                            cy="50"
+                                            r="40"
+                                            fill="transparent"
+                                        ></circle>
+                                        {/* <!-- Progress circle --> */}
+                                        <circle
+                                            className="text-info  progress-ring__circle stroke-current"
+                                            stroke-width="10"
+                                            stroke-linecap="round"
+                                            cx="50"
+                                            cy="50"
+                                            r="40"
+                                            fill="transparent"
+                                            stroke-dasharray="251.2"
+                                            stroke-dashoffset="calc(251.2px - (251.2px * 70) / 100)"
+                                        ></circle>
+
+                                        {/* <!-- Center text --> */}
+                                        <text
+                                            x="50"
+                                            y="50"
+                                            font-family="Verdana"
+                                            font-size="12"
+                                            text-anchor="middle"
+                                            alignment-baseline="middle"
+                                        >
+                                            70%
+                                        </text>
+                                    </svg>
                                 </div>
                             </div>
                             <div className="w-1/2 border-2 rounded-lg p-2 bg-sky-50">
@@ -643,9 +691,7 @@ export default function PageHeader({}: PageHeaderProps) {
                                     className="flex w-full justify-between  pt-18"
                                 >
                                     {/* if there is a button in form, it will close the modal */}
-                                    <button className="btn mx-2">
-                                        Cancel
-                                    </button>
+                                    <button className="btn mx-2">Cancel</button>
                                     <button className="btn mx-2 bg-info text-white">
                                         Save Changes
                                     </button>
