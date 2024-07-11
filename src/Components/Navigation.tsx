@@ -51,7 +51,7 @@ export default function Navigation({ logUserOut }: NavigationProps) {
                                 </li>
                                 <li>
                                     <a>
-                                        <img src={exports}></img><p className="hidden md:block">Share/Export</p>
+                                        <img src={exports}></img><p className="hidden md:block">Share</p>
                                     </a>
                                 </li>
                             </ul>

@@ -8,7 +8,7 @@ type HomeProps = { currentUser: UserType };
 
 export default function Home({}: HomeProps) {
     return (
-        <div className="col-span-4 p-4">
+        <div className="col-span-4 lg:col-span-8 p-4">
             <PageHeader />
             <div className="divider"></div>
             <div className="w-full items-center justify-between">
@@ -41,18 +41,21 @@ export default function Home({}: HomeProps) {
                 </div>
                 <div className="grid grid-cols-5 w-full gap-4 p-2">
                     <div className="col-span-5 md:col-span-3 gap-4">
-                        <div className="col-span-5 md:col-span-3 border-2 border-gray-300 rounded-lg p-2 bg-sky-50 h-96">
+                        <div className="col-span-5 md:col-span-3 border-2 border-gray-300 rounded-lg bg-sky-50 h-96">
                             <Chart />
                         </div>
                         <div className="flex justify-between w-full gap-4 col-span-5 md:col-span-3 mt-4">
-                            <div className="border-2 w-1/3 border-gray-300 rounded-lg p-2 bg-sky-50 h-24">
-                                Activities
+                            <div className="flex items-center border-2 w-1/3 border-gray-300 rounded-lg bg-sky-50 h-24 place-content-center p-8">
+                                <p className="font-medium text-nowrap">Activities</p>
+                                <p className="text-3xl font-medium w-full text-right">5</p>
                             </div>
-                            <div className="border-2 w-1/3 border-gray-300 rounded-lg p-2 bg-sky-50 h-24">
-                                Spoons Used
+                            <div className="flex items-center border-2 w-1/3 border-gray-300 rounded-lg bg-sky-50 h-24 place-content-center p-8">
+                                <p className="font-medium text-nowrap">Spoons Used</p>
+                                <p className="text-3xl font-medium w-full text-right">10</p>
                             </div>
-                            <div className="border-2 w-1/3 border-gray-300 rounded-lg p-2 bg-sky-50 h-24">
-                                Flare Ups
+                            <div className="flex items-center border-2 w-1/3 border-gray-300 rounded-lg bg-sky-50 h-24 place-content-center p-8">
+                                <p className="font-medium text-nowrap">Flare Ups</p>
+                                <p className="text-3xl font-medium w-full text-right">1</p>
                             </div>
                         </div>
                     </div>

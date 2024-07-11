@@ -88,7 +88,7 @@ function App() {
     return (
         <>
             {isLoggedIn && (
-                <div className="grid grid-cols-5">
+                <div className="grid grid-cols-5 lg:grid-cols-9">
                     <div className="col-span-1">
                         <Navigation
                             

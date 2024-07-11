@@ -6,7 +6,7 @@ type HomeProps = { currentUser: UserType };
 
 export default function Home({}: HomeProps) {
     return (
-        <div className="col-span-4 p-4">
+        <div className="col-span-4 lg:col-span-8 p-4">
             <PageHeader />
             <div className="divider"></div>
             <div className="w-full items-center justify-between">
