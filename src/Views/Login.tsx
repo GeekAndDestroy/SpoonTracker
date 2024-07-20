@@ -89,10 +89,10 @@ export default function LogIn({ logUserIn }: LogInProps) {
                     <button className="btn my-8 mx-auto py-8 px-16 content-center bg-info text-white w-1/2">
                         Log In
                     </button>
+                </form>
                     <a href="/signup" className="text-center link">
                         Need an account? Sign Up
                     </a>
-                </form>
             </div>
         </div>
     );
