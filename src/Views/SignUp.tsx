@@ -1,19 +1,22 @@
 import { useState } from "react";
-import { UserFormDataType } from "../types";
+import { useNavigate } from "react-router-dom";
+import { UserFormDataType, UserType } from "../types";
 import eye from "../assets/icons/eye.svg";
 import eyeoff from "../assets/icons/eyeoff.svg";
+import { register } from "../lib/apiWrapper";
 
 
 type SignUpProps = {};
 
 export default function SignUp({}: SignUpProps) {
+    const navigate = useNavigate();
+
     const [userFormData, setUserFormData] = useState<Partial<UserFormDataType>>(
         {
             first_name: "",
             last_name: "",
             email: "",
             password: "",
-            confirm_password: "",
         }
     );
 
@@ -31,6 +34,32 @@ export default function SignUp({}: SignUpProps) {
         setUserFormData({ ...userFormData, [e.target.name]: e.target.value });
     };
 
+    const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        console.log("userFormData before register", userFormData);
+
+        const body = {
+            first_name: userFormData.first_name,
+            last_name: userFormData.last_name,
+            email: userFormData.email,
+            password: userFormData.password,
+        };
+
+        console.log("body before register", body);
+        
+
+        let response = await register(body as UserType);
+        if (response.error) {
+            console.log(response);
+            console.log(response.error);
+        } else {
+            let newUser = response.data!; 
+            console.log("success", newUser);
+            navigate('/login');
+        }
+    };
+
     return (
         <div className="w-full place-content-center">
             <div className="grid grid-cols-1 mt-16 mb-8 mx-auto place-items-center w-10/12">
@@ -41,7 +70,7 @@ export default function SignUp({}: SignUpProps) {
             </div>
 
             <div className="w-1/2 mx-auto">
-                <form className="form-control">
+                <form className="form-control"  onSubmit={handleFormSubmit}>
                     <div className="flex w-full">
                         <input
                             type="text"

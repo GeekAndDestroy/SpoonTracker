@@ -1,12 +1,16 @@
 import { useState } from "react";
-import { UserFormDataType } from "../types";
+import { UserLoginDataType, UserFormDataType } from "../types";
+import { useNavigate } from "react-router-dom";
 import eye from "../assets/icons/eye.svg";
 import eyeoff from "../assets/icons/eyeoff.svg";
+import { login } from "../lib/apiWrapper";
 
 
 type LogInProps = { logUserIn: () => void };
 
-export default function LogIn({  }: LogInProps) {
+export default function LogIn({ logUserIn }: LogInProps) {
+
+    const navigate = useNavigate();
 
     const [userFormData, setUserFormData] = useState<Partial<UserFormDataType>>(
         {
@@ -21,6 +25,36 @@ export default function LogIn({  }: LogInProps) {
         setUserFormData({ ...userFormData, [e.target.name]: e.target.value });
     };
 
+    const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log("userFormData before login", userFormData);
+
+        const body = {
+            email: userFormData.email,
+            password: userFormData.password,
+        };
+
+        console.log("body before login", body);
+
+        let response = await login(body as UserLoginDataType);
+        if (response.error) {
+            console.log(response);
+            console.log(response.error);
+        } else {
+            let newUser = response.data!;
+            console.log("success", newUser);
+            localStorage.setItem("token", newUser.token);
+            localStorage.setItem("email", newUser.user_data.email);
+            localStorage.setItem("first_name", newUser.user_data.first_name);
+            localStorage.setItem("last_name", newUser.user_data.last_name);
+            localStorage.setItem("user_id", newUser.user_data.id);
+            localStorage.setItem("profile_pic", newUser.user_data.profile_pic);
+            localStorage.setItem("spoons", newUser.user_data.spoons);
+            logUserIn();
+            navigate('/');
+        }
+    }
+
     return (
         <div className="w-full place-content-center">
             <div className="grid grid-cols-1 mt-16 mb-8 mx-auto place-items-center w-10/12">
@@ -31,7 +65,7 @@ export default function LogIn({  }: LogInProps) {
             </div>
 
             <div className="w-1/2 mx-auto">
-                <form className="form-control">
+                <form className="form-control" onSubmit={handleFormSubmit}>
                     <input
                         type="text"
                         name="email"

@@ -2,9 +2,10 @@ import dashboard from "../assets/icons/dashboard.svg";
 import insight from "../assets/icons/insight.svg";
 import exports from "../assets/icons/exports.svg";
 import settings from "../assets/icons/settings.svg";
+// import { UserType } from "../types";
 
 type NavigationProps = {
-
+    
     logUserOut: () => void;
 };
 

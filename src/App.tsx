@@ -25,6 +25,8 @@ function App() {
         last_name: "",
         token: "",
         user_id: NaN,
+        spoons: NaN,
+        profile_pic: "",
     });
 
     useEffect(() => {
@@ -48,20 +50,20 @@ function App() {
         }
     }, [location.pathname]);
 
-    // useEffect(() => {
-    //   async function getLoggedInUser(){
-    //     if (isLoggedIn){
-    //       setLoggedInUser({
-    //         email: localStorage.getItem('email')!,
-    //         first_name: localStorage.getItem('first_name')!,
-    //         last_name: localStorage.getItem('last_name')!,
-    //         token: localStorage.getItem('token')!,
-    //         user_id: parseInt(localStorage.getItem('user_id')!),
-    //       })
-    //     }
-    //   }
-    //   getLoggedInUser();
-    // }, [isLoggedIn])
+    useEffect(() => {
+      async function getLoggedInUser(){
+        if (isLoggedIn){
+          setLoggedInUser({
+            email: localStorage.getItem('email')!,
+            first_name: localStorage.getItem('first_name')!,
+            last_name: localStorage.getItem('last_name')!,
+            token: localStorage.getItem('token')!,
+            user_id: (localStorage.getItem('user_id') as unknown as number),
+          })
+        }
+      }
+      getLoggedInUser();
+    }, [isLoggedIn])
 
     const logUserIn = () => {
         setIsLoggedIn(true);
