@@ -131,10 +131,10 @@ export default function SignUp({}: SignUpProps) {
                     <button className="btn my-8 mx-auto py-8 px-16 content-center bg-info w-1/2 text-white" disabled={disableSubmit}>
                         Sign Up
                     </button>
+                </form>
                     <a href="/login" className="text-center link">
                         Already have an account? Log In
                     </a>
-                </form>
             </div>
         </div>
     );
