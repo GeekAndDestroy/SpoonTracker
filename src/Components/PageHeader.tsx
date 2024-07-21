@@ -82,19 +82,30 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
         setSpoonsLeft(Number(spoons)-spoonsUsed!);
         console.log("spoonsLeft", spoonsLeft);
 
-        if ((parseInt(spoons!) * .75) > spoonsUsed!) {
-            setSpoonsLabel("bg-green-500");
-        }
-        else if ((parseInt(spoons!) * .75) <= spoonsUsed!) {
-            setSpoonsLabel("bg-yellow-500");
-        }
-        else if ((parseInt(spoons!) * .875) <= spoonsUsed!) {
-            setSpoonsLabel("bg-orange-500");
-        }
-        else {
+        // if ((parseInt(spoons!) * .75) > spoonsUsed!) {
+        //     setSpoonsLabel("bg-green-500");
+        // }
+        // else if ((parseInt(spoons!) * .75) <= spoonsUsed!) {
+        //     setSpoonsLabel("bg-yellow-500");
+        // }
+        // else if ((parseInt(spoons!) * .875) <= spoonsUsed!) {
+        //     setSpoonsLabel("bg-orange-500");
+        // }
+        // else {
+        //     setSpoonsLabel("bg-red-500");
+        // }
+
+        if ((parseInt(spoons!)) <= spoonsUsed!) {
             setSpoonsLabel("bg-red-500");
         }
-    }
+        else if ((parseInt(spoons!)-2) <= spoonsUsed!) {
+            setSpoonsLabel("bg-yellow-500");
+        }
+        else {
+            setSpoonsLabel("bg-green-500");
+        }
+ }
+    
     , [spoonsUsed]);
 
 

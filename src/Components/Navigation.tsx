@@ -46,7 +46,7 @@ export default function Navigation({ logUserOut }: NavigationProps) {
                                     </a>
                                 </li>
                                 <li>
-                                    <a>
+                                    <a href="/activitylog">
                                         <img src={insight}></img><p className="hidden md:block">Insights</p>
                                     </a>
                                 </li>
