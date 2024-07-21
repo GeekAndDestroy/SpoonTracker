@@ -19,14 +19,24 @@ function App() {
         localStorage.getItem("token") ? true : false
     );
 
+    // const [loggedInUser, setLoggedInUser] = useState<Partial<UserType>>({
+    //     email: "",
+    //     first_name: "",
+    //     last_name: "",
+    //     token: "",
+    //     user_id: NaN,
+    //     spoons: NaN,
+    //     profile_pic: "",
+    // });
+
     const [loggedInUser, setLoggedInUser] = useState<Partial<UserType>>({
-        email: "",
-        first_name: "",
-        last_name: "",
-        token: "",
-        user_id: NaN,
-        spoons: NaN,
-        profile_pic: "",
+        email: localStorage.getItem("email") || "",
+        first_name: localStorage.getItem("first_name") || "",
+        last_name: localStorage.getItem("last_name") || "",
+        token: localStorage.getItem("token") || "",
+        user_id: parseInt(localStorage.getItem("user_id")!) || NaN,
+        spoons: parseInt(localStorage.getItem("spoons")!) || NaN,
+        profile_pic: localStorage.getItem("profile_pic") || "",
     });
 
     // const user: Partial<UserType> = {

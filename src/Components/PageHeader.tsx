@@ -22,6 +22,7 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
     });
 
     const [spoonsLeft, setSpoonsLeft] = useState(0);
+    const [spoonsLabel, setSpoonsLabel] = useState("");
 
  
 
@@ -80,6 +81,19 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
         const spoons = localStorage.getItem("spoons");
         setSpoonsLeft(Number(spoons)-spoonsUsed!);
         console.log("spoonsLeft", spoonsLeft);
+
+        if ((parseInt(spoons!) * .75) > spoonsUsed!) {
+            setSpoonsLabel("bg-green-500");
+        }
+        else if ((parseInt(spoons!) * .75) <= spoonsUsed!) {
+            setSpoonsLabel("bg-yellow-500");
+        }
+        else if ((parseInt(spoons!) * .875) <= spoonsUsed!) {
+            setSpoonsLabel("bg-orange-500");
+        }
+        else {
+            setSpoonsLabel("bg-red-500");
+        }
     }
     , [spoonsUsed]);
 
@@ -146,7 +160,7 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
                 {/* Change Spoons Button */}
 
                 <button
-                    className="btn btn-ghost text-base"
+                    className={`btn btn-ghost text-base ${spoonsLabel}`}
                     onClick={() =>
                         (
                             document.getElementById(
