@@ -11,6 +11,17 @@ type PageHeaderProps = {
     spoonsUsed?: number;
 };
 
+const getGreeting = () => {
+    const currentHour = new Date().getHours();
+    if (currentHour < 12) {
+        return "Good Morning";
+    } else if (currentHour < 18) {
+        return "Good Afternoon";
+    } else {
+        return "Good Evening";
+    }
+};
+
 export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps) {
     const [taskForm, setTaskForm] = useState<Partial<TaskType>>({
         task: "",
@@ -23,6 +34,7 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
 
     const [spoonsLeft, setSpoonsLeft] = useState(0);
     const [spoonsLabel, setSpoonsLabel] = useState("");
+    const [greeting, setGreeting] = useState("Good Day");
 
  
 
@@ -68,6 +80,17 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
         }
     };
 
+    const getGreeting = () => {
+        const currentHour = new Date().getHours();
+        if (currentHour < 12) {
+            return "Good Morning";
+        } else if (currentHour < 18) {
+            return "Good Afternoon";
+        } else {
+            return "Good Evening";
+        }
+    };
+
     useEffect(() => {
         setTaskForm({
             ...taskForm,
@@ -98,7 +121,7 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
         if ((parseInt(spoons!)) <= spoonsUsed!) {
             setSpoonsLabel("bg-red-500");
         }
-        else if ((parseInt(spoons!)-2) <= spoonsUsed!) {
+        else if ((parseInt(spoons!)-2) == spoonsUsed!) {
             setSpoonsLabel("bg-yellow-500");
         }
         else {
@@ -108,13 +131,17 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
     
     , [spoonsUsed]);
 
+    useEffect(() => {
+        setGreeting(getGreeting());
+    }, []);
+
 
 
     return (
         <div className="flex w-full items-center justify-between h-20">
             <div className="w-1/2 p-2">
                 <h1 className="text-2xl font-bold">
-                    Good Morning, {currentUser.first_name}
+                {greeting}, {currentUser.first_name}
                 </h1>
             </div>
             <div className="flex items-center">
