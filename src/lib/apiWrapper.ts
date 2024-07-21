@@ -73,6 +73,25 @@ export async function register(newUser: UserFormDataType): Promise<APIResponse<U
     return { data, error };
 }
 
+export async function updateUserById(user_id: number, updatedUser: UserFormDataType): Promise<APIResponse<UserType>> {
+    let data;
+    let error;
+    try {
+        const response = await fetch(baseURL + userEndpoint + user_id, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updatedUser),
+        });
+        data = await response.json();
+        console.log("data from apiWrapper", data);
+    } catch (err) {
+        error = "Something went wrong";
+    }
+    return { data, error };
+}
+
 export async function login(user: UserLoginDataType): Promise<APIResponse<UserType>> {
     let data;
     let error;

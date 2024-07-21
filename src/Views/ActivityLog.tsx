@@ -24,10 +24,33 @@ export default function ActivityLog({ currentUser }: ActivityLogProps) {
         }
     };
 
+    const updateActivityLog = async () => {
+        const user = localStorage.getItem("user_id");
+        if (!user) return;
+
+        let response = await getTasksByUserId(Number(user));
+        if (response.error) {
+            console.log(response.error);
+        } else {
+            const filteredTasks = response.data!.filter((task: TaskType) => {
+                return task.date >= startDate && task.date <= endDate;
+            });
+            setActivityLog(filteredTasks);
+            setActivitiesCount(filteredTasks.length);
+            setTotalSpoonsUsed(filteredTasks.reduce((acc, task) => acc + task.spoons_needed, 0));
+            setFlareUps(filteredTasks.filter(task => task.task.toLowerCase().includes("flare")).length);
+        }
+    };
+
+    useEffect(() => {
+        updateActivityLog();
+    }, [startDate, endDate]);
+
     useEffect(() => {
         const user = localStorage.getItem("user_id");
-        async function getTasks() {
-            console.log("Current User: " + user);
+        if (!user) return;
+
+        async function getTodayTasks() {
             let response = await getTasksByUserId(Number(user));
             if (response.error) {
                 console.log(response.error);
@@ -36,35 +59,18 @@ export default function ActivityLog({ currentUser }: ActivityLogProps) {
                 const todaysActivities = response.data!.filter((task: TaskType) => task.date === today);
                 setSpoonsUsed(todaysActivities.reduce((acc, task) => acc + task.spoons_needed, 0));
             }
-            console.log("Activity Log:", response.data);
         }
-        getTasks();
+        getTodayTasks();
     }, []);
-
-    useEffect(() => {
-        const user = localStorage.getItem("user_id");
-        async function getTasks() {
-            console.log("Current User: " + user);
-            let response = await getTasksByUserId(Number(user));
-            if (response.error) {
-                console.log(response.error);
-            } else {
-                const filteredTasks = response.data!.filter((task: TaskType) => {
-                    return task.date >= startDate && task.date <= endDate;
-                });
-                setActivityLog(filteredTasks);
-                setActivitiesCount(filteredTasks.length);
-                setTotalSpoonsUsed(filteredTasks.reduce((acc, task) => acc + task.spoons_needed, 0));
-                setFlareUps(filteredTasks.filter(task => task.task.toLowerCase().includes("flare")).length);
-                console.log("Filtered Activity Log:", filteredTasks);
-            }
-        }
-        getTasks();
-    }, [startDate, endDate]);
 
     return (
         <div className="col-span-4 lg:col-span-8 p-4">
-            <PageHeader currentUser={currentUser} spoonsUsed={spoonsUsed} />
+            <PageHeader 
+                currentUser={currentUser} 
+                spoonsUsed={spoonsUsed} 
+                updateActivityLog={updateActivityLog} 
+                activityLog={activityLog}
+            />
             <div className="divider"></div>
             <div className="w-full items-center justify-between">
                 <div className="flex w-full p-2 items-center justify-between">

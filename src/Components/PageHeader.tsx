@@ -1,32 +1,55 @@
 import spoon from "../assets/icons/spoon.svg";
 import plus from "../assets/icons/plus.svg";
+import plus_math from "../assets/icons/plus_math.svg";
+import subtract from "../assets/icons/subtract.svg";
 import caret_down from "../assets/icons/caret_down.svg";
 import { TaskType, UserType } from "../types";
 import { useEffect, useState } from "react";
-import { createTask } from "../lib/apiWrapper";
-
+import { createTask, updateUserById } from "../lib/apiWrapper";
 
 type PageHeaderProps = {
     currentUser: UserType;
     spoonsUsed?: number;
+    updateActivityLog?: () => void;
+    activityLog?: TaskType[];
 };
 
-
-export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps) {
+export default function PageHeader({
+    currentUser,
+    spoonsUsed,
+    updateActivityLog,
+    activityLog,
+}: PageHeaderProps) {
     const [taskForm, setTaskForm] = useState<Partial<TaskType>>({
         task: "",
         description: "",
         duration: "",
         spoons_needed: 0,
         time_of_day: "",
-        user_id: (localStorage.getItem("user_id") as unknown as number), 
+        user_id: localStorage.getItem("user_id") as unknown as number,
     });
 
     const [spoonsLeft, setSpoonsLeft] = useState(0);
     const [spoonsLabel, setSpoonsLabel] = useState("");
+    const [spoonsForm, setSpoonsForm] = useState<Partial<UserType>>({
+        spoons: parseInt(localStorage.getItem("spoons")!),
+    });
     const [greeting, setGreeting] = useState("Good Day");
 
- 
+    function incrementSpoon() {
+        setSpoonsForm({ ...spoonsForm, spoons: spoonsForm.spoons! + 1 });
+    }
+
+    // function decrementSpoon() {
+    //     setSpoonsForm({ ...spoonsForm, spoons: spoonsForm.spoons! - 1 });
+    // }
+
+    function decrementSpoon() {
+        setSpoonsForm((prevSpoonsForm) => {
+            const newSpoons = Math.max(prevSpoonsForm.spoons! - 1, 0);
+            return { ...prevSpoonsForm, spoons: newSpoons };
+        });
+    }
 
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -35,11 +58,13 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
         setTaskForm({ ...taskForm, [name]: value });
     };
 
-    const handleRadioChange = (
-        e: React.ChangeEvent<HTMLInputElement>
-    ) => {
+    const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        if (name === "spoons_needed" || name === "duration" || name === "time_of_day") {
+        if (
+            name === "spoons_needed" ||
+            name === "duration" ||
+            name === "time_of_day"
+        ) {
             setTaskForm({ ...taskForm, [name]: value });
         }
     };
@@ -54,7 +79,7 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
             duration: taskForm.duration,
             spoons_needed: taskForm.spoons_needed,
             time_of_day: taskForm.time_of_day,
-            user_id: (localStorage.getItem("user_id") as unknown as number),
+            user_id: localStorage.getItem("user_id") as unknown as number,
         };
 
         console.log("body before submit", body);
@@ -70,6 +95,25 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
         }
     };
 
+   const handleUpdateSpoonsFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log("spoonsForm before submit", spoonsForm);
+
+        const body = {spoonsForm};
+
+        console.log("body before submit", body);
+
+        let response = await updateUserById(Number(localStorage.getItem("user_id")), spoonsForm as UserType);
+        if (response.error) {
+            console.log(response);
+            console.log(response.error);
+        } else {
+            let newUser = response.data!;
+            console.log("success", newUser);
+            localStorage.setItem("spoons", newUser.spoons.toString());
+        }
+    }    
+
     const getGreeting = () => {
         const currentHour = new Date().getHours();
         if (currentHour < 12) {
@@ -84,54 +128,41 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
     useEffect(() => {
         setTaskForm({
             ...taskForm,
-            user_id: Number(localStorage.getItem("user_id")) ,
+            user_id: Number(localStorage.getItem("user_id")),
         });
         console.log("taskForm after useEffect", taskForm);
         console.log("currentUser after useEffect", currentUser);
-    } , []);
+    }, []);
 
     useEffect(() => {
         const spoons = localStorage.getItem("spoons");
-        setSpoonsLeft(Number(spoons)-spoonsUsed!);
+        setSpoonsLeft(Number(spoons) - spoonsUsed!);
         console.log("spoonsLeft", spoonsLeft);
 
-        // if ((parseInt(spoons!) * .75) > spoonsUsed!) {
-        //     setSpoonsLabel("bg-green-500");
-        // }
-        // else if ((parseInt(spoons!) * .75) <= spoonsUsed!) {
-        //     setSpoonsLabel("bg-yellow-500");
-        // }
-        // else if ((parseInt(spoons!) * .875) <= spoonsUsed!) {
-        //     setSpoonsLabel("bg-orange-500");
-        // }
-        // else {
-        //     setSpoonsLabel("bg-red-500");
-        // }
-
-        if ((parseInt(spoons!)) <= spoonsUsed!) {
+        if (parseInt(spoons!) <= spoonsUsed!) {
             setSpoonsLabel("bg-red-500");
-        }
-        else if ((parseInt(spoons!)-2) == spoonsUsed!) {
+        } else if (parseInt(spoons!) - 2 == spoonsUsed!) {
             setSpoonsLabel("bg-yellow-500");
-        }
-        else {
+        } else {
             setSpoonsLabel("bg-green-500");
         }
- }
-    
-    , [spoonsUsed]);
+    }, [spoonsUsed]);
 
     useEffect(() => {
         setGreeting(getGreeting());
     }, []);
 
-
+    useEffect(() => {
+        if (updateActivityLog) {
+            updateActivityLog();
+        }
+    }, [handleFormSubmit]);
 
     return (
         <div className="flex w-full items-center justify-between h-20">
             <div className="w-1/2 p-2">
                 <h1 className="text-2xl font-bold">
-                {greeting}, {currentUser.first_name}
+                    {greeting}, {currentUser.first_name}
                 </h1>
             </div>
             <div className="flex items-center">
@@ -279,7 +310,6 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
                                 )}
                             </ul>
 
-
                             <p className="text-medium my-4">
                                 What time of day?
                             </p>
@@ -316,7 +346,6 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
                                 ))}
                             </ul>
 
-
                             <p className="text-medium my-4">How did it go?</p>
                             <textarea
                                 className="textarea textarea-bordered w-full min-h-18"
@@ -326,29 +355,32 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
                                 value={taskForm.description}
                                 onChange={handleInputChange}
                             ></textarea>
-                            <div className = "flex justify-between mt-4">
-                            <button className="btn mx-2 "
+                            <div className="flex justify-between mt-4">
+                                <button
+                                    className="btn mx-2 "
                                     onClick={() =>
-                                (
-                                    document.getElementById(
-                                        "logActivity_modal"
-                                    ) as HTMLDialogElement
-                                ).close()
-                            }>
-                                        Cancel
-                                    </button>
-                            <button
-                                type="submit"
-                                className="btn mx-2 bg-info text-white"
-                                onClick={() =>
-                                    (
-                                        document.getElementById(
-                                            "logActivity_modal"
-                                        ) as HTMLDialogElement
-                                    ).close()}
-                            >
-                                Save Activity
-                            </button>
+                                        (
+                                            document.getElementById(
+                                                "logActivity_modal"
+                                            ) as HTMLDialogElement
+                                        ).close()
+                                    }
+                                >
+                                    Cancel
+                                </button>
+                                <button
+                                    type="submit"
+                                    className="btn mx-2 bg-info text-white"
+                                    onClick={() =>
+                                        (
+                                            document.getElementById(
+                                                "logActivity_modal"
+                                            ) as HTMLDialogElement
+                                        ).close()
+                                    }
+                                >
+                                    Save Activity
+                                </button>
                             </div>
                         </form>
                         <div className="w-full">
@@ -407,10 +439,10 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
                     <div className="modal-box max-w-[750px] w-full md:w-3/4">
                         <h3 className="font-bold text-lg">Daily Spoons</h3>
 
-                        <div className="flex gap-2 m-2">
-                            <div className="flex w-1/2 border-2 rounded-lg p-2 bg-sky-50">
-                                <span className="w-full">Spoons</span>
-                                <div className="relative w-40 h-40">
+                        <div className="flex gap-2 m-2 items-center justify-center h-76">
+                            <div className="flex align-center justify-center w-1/2 border-2 rounded-lg p-2 bg-sky-50 h-72">
+                                {/* <span className="w-full text-center">Spoons</span> */}
+                                <div className="relative w-40 h-40 m-auto">
                                     <svg
                                         className="w-full h-full"
                                         viewBox="0 0 100 100"
@@ -434,46 +466,114 @@ export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps)
                                             r="40"
                                             fill="transparent"
                                             stroke-dasharray="251.2"
-                                            stroke-dashoffset="calc(251.2px - (251.2px * 70) / 100)"
+                                            stroke-dashoffset={
+                                                251.2 -
+                                                ((parseInt(
+                                                    localStorage.getItem(
+                                                        "spoons"
+                                                    )!
+                                                ) -
+                                                    spoonsLeft) /
+                                                    parseInt(
+                                                        localStorage.getItem(
+                                                            "spoons"
+                                                        )!
+                                                    )) *
+                                                    251.2
+                                            }
                                         ></circle>
 
                                         {/* <!-- Center text --> */}
                                         <text
                                             x="50"
                                             y="50"
-                                            font-family="Verdana"
+                                            // font-family="Verdana"
                                             font-size="12"
                                             text-anchor="middle"
                                             alignment-baseline="middle"
                                         >
-                                            70%
+                                            {parseInt(
+                                                localStorage.getItem("spoons")!
+                                            ) - spoonsLeft}
+                                            /{localStorage.getItem("spoons")}
                                         </text>
                                     </svg>
                                 </div>
                             </div>
-                            <div className="w-1/2 border-2 rounded-lg p-2 bg-sky-50">
-                                Activity
+                            <div className="w-1/2 border-2 rounded-lg p-2 bg-sky-50 h-72 overflow-y-auto">
+                                {activityLog!
+                                    .filter((t) => {
+                                        const today = new Date()
+                                            .toISOString()
+                                            .split("T")[0]; // Get today's date in YYYY-MM-DD format
+                                        return t.date === today;
+                                    })
+                                    .map((t) => (
+                                        <div className="flex p-2" key={t.id}>
+                                            <div className="flex flex-col w-3/4">
+                                                <div>
+                                                    <h3 className="font-bold text-lg">
+                                                        {t.task}
+                                                    </h3>
+                                                </div>
+                                                <div>
+                                                    <p className="font-medium">
+                                                        {t.spoons_needed} Spoons
+                                                        Consumed
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center w-1/4">
+                                                <p className="font-medium">
+                                                    {t.time_of_day}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ))}
                             </div>
                         </div>
-
-                        <div className="w-full">
-                            <div className="modal-action mt-4">
-                                <form
-                                    method="dialog"
-                                    className="flex w-full justify-between  pt-18"
+                        <form onSubmit={handleUpdateSpoonsFormSubmit}>
+                            <div className="flex w-full mt-8 items-center justify-between">
+                                <div className="w-1/3">
+                                    <h3 className="font-bold text-lg">
+                                        Daily Spoons Available
+                                    </h3>
+                                </div>
+                                <div className="flex flex-row items-center">
+                                    
+                                        <img src={subtract} onClick={decrementSpoon} className="btn btn-ghost"/>
+                                    
+                                    <img src={spoon} className="ml-6"></img>
+                                    <p className="font-medium text-3xl text mr-6">
+                                        {spoonsForm.spoons}
+                                    </p>
+                                    
+                                    <img src={plus_math} onClick={incrementSpoon} className="btn btn-ghost"/>
+                                    
+                                </div>
+                            </div>
+                            <div className="mt-4 mb-12">
+                                <p>
+                                    Changing daily spoons available impacts the
+                                    amount of spoons you will have available to
+                                    assign activities. Can be changed once a
+                                    day.
+                                </p>
+                            </div>
+                            <div className="modal-actions mt-4 flex justify-between">
+                                {/* if there is a button in form, it will close the modal */}
+                                <button className="btn mx-2">Cancel</button>
+                                <button
+                                    type="submit"
+                                    className="btn mx-2 bg-info text-white"
                                 >
-                                    {/* if there is a button in form, it will close the modal */}
-                                    <button className="btn mx-2">Cancel</button>
-                                    <button className="btn mx-2 bg-info text-white">
-                                        Save Changes
-                                    </button>
-                                </form>
+                                    Save Changes
+                                </button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </dialog>
             </div>
         </div>
     );
 }
-
