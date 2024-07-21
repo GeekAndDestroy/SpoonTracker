@@ -5,9 +5,9 @@ import { getTasksByUserId } from "../lib/apiWrapper";
 import { TaskType } from "../types";
 import Chart from "../Components/Chart";
 
-type HomeProps = { currentUser: UserType };
+type ActivityLogProps = { currentUser: UserType };
 
-export default function Home({ currentUser }: HomeProps) {
+export default function ActivityLog({ currentUser }: ActivityLogProps) {
     const [activityLog, setActivityLog] = useState<TaskType[] | undefined>([]);
     const [activitiesCount, setActivitiesCount] = useState(0);
     const [spoonsUsed, setSpoonsUsed] = useState(0);
@@ -56,8 +56,8 @@ export default function Home({ currentUser }: HomeProps) {
                 setActivitiesCount(filteredTasks.length);
                 setTotalSpoonsUsed(filteredTasks.reduce((acc, task) => acc + task.spoons_needed, 0));
                 setFlareUps(filteredTasks.filter(task => task.task.toLowerCase().includes("flare")).length);
+                console.log("Filtered Activity Log:", filteredTasks);
             }
-            console.log("Filtered Activity Log:", filteredTasks);
         }
         getTasks();
     }, [startDate, endDate]);
@@ -76,15 +76,15 @@ export default function Home({ currentUser }: HomeProps) {
                             <label>Start: </label>
                             <input
                                 type="date"
-                                className="border-2 rounded-lg p-2 m-2"
+                                className="border-2 border-gray-200 rounded-lg p-2 m-2"
                                 name="startDate"
                                 value={startDate}
                                 onChange={handleDateChange}
                             />
-                            <label>End: </label>
+                            <label className="ml-4">End: </label>
                             <input
                                 type="date"
-                                className="border-2 rounded-lg p-2 m-2"
+                                className="border-2 border-gray-200 rounded-lg p-2 ml-2"
                                 name="endDate"
                                 value={endDate}
                                 onChange={handleDateChange}
@@ -129,7 +129,7 @@ export default function Home({ currentUser }: HomeProps) {
                     </div>
                 </div>
                 <div className="border-2 border-gray-300 rounded-lg bg-sky-50 h-96 mt-6">
-                    <Chart />
+                    <Chart activityLog={ activityLog ?? [] }/>
                 </div>
                 <div className="flex justify-between w-full gap-4 col-span-5 md:col-span-3 mt-4">
                     <div className="flex items-center border-2 w-1/3 border-gray-300 rounded-lg bg-sky-50 h-24 place-content-center p-8">
