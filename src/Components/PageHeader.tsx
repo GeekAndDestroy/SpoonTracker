@@ -146,7 +146,7 @@ export default function PageHeader({
         } else {
             setSpoonsLabel("bg-green-500");
         }
-    }, [spoonsUsed]);
+    }, [spoonsUsed, handleUpdateSpoonsFormSubmit]);
 
     useEffect(() => {
         setGreeting(getGreeting());
@@ -562,10 +562,24 @@ export default function PageHeader({
                             </div>
                             <div className="modal-actions mt-4 flex justify-between">
                                 {/* if there is a button in form, it will close the modal */}
-                                <button className="btn mx-2">Cancel</button>
+                                <button className="btn mx-2" 
+                                    onClick={() =>
+                                        (
+                                            document.getElementById(
+                                                "changeSpoons_modal"
+                                            ) as HTMLDialogElement
+                                        )?.close()
+                                    }>Cancel</button>
                                 <button
                                     type="submit"
                                     className="btn mx-2 bg-info text-white"
+                                    onClick={() =>
+                                        (
+                                            document.getElementById(
+                                                "changeSpoons_modal"
+                                            ) as HTMLDialogElement
+                                        )?.close()
+                                    }
                                 >
                                     Save Changes
                                 </button>
