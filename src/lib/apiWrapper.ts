@@ -6,6 +6,7 @@ import { UserFormDataType, UserType, UserLoginDataType, TaskType } from '../type
 const baseURL: string = 'https://spork-lb9l.onrender.com/';
 const userEndpoint: string = 'users/';
 const taskEndpoint: string = 'tasks/';
+const taskByDateEndpoint: string = 'tasks/bydate/';
 const tokenEndpoint: string = 'token/';
 
 
@@ -65,7 +66,7 @@ export async function register(newUser: UserFormDataType): Promise<APIResponse<U
             body: JSON.stringify(newUser),
         });
         data = await response.json();
-        console.log("data from apiWrapper", data);
+        // console.log("data from apiWrapper", data);
     } catch (err) {
         error = "Something went wrong";
     }
@@ -84,7 +85,7 @@ export async function login(user: UserLoginDataType): Promise<APIResponse<UserTy
             body: JSON.stringify(user),
         });
         data = await response.json();
-        console.log("data from apiWrapper", data);
+        // console.log("data from apiWrapper", data);
     } catch (err) {
         error = "Something went wrong";
     }
@@ -104,6 +105,32 @@ export async function createTask(task: TaskType): Promise<APIResponse<TaskType>>
         });
         data = await response.json();
         console.log("data from apiWrapper", data);
+    } catch (err) {
+        error = "Something went wrong";
+    }
+    return { data, error };
+}
+
+export async function getTasksByUserId(user_id: number): Promise<APIResponse<TaskType[]>> {
+    let data;
+    let error;
+    try {
+        const response = await fetch(baseURL + taskEndpoint + user_id);
+        data = await response.json();
+        console.log("TaskByID data from apiWrapper", data);
+    } catch (err) {
+        error = "Something went wrong";
+    }
+    return { data, error };
+}
+
+export async function getTasksByDate(user_id: number, start_date: string, end_date: string): Promise<APIResponse<TaskType[]>> {
+    let data;
+    let error;
+    try {
+        const response = await fetch(baseURL + taskByDateEndpoint + user_id + "/" + start_date + "/" + end_date);
+        data = await response.json();
+        console.log("TaskByDate data from apiWrapper", data);
     } catch (err) {
         error = "Something went wrong";
     }

@@ -24,8 +24,10 @@ export type UserLoginDataType = {
   };
 
 export type TaskType = {
+    date: string;
     description: string;
     duration: string;
+    icon: string;
     id: number;
     spoons_needed: number;
     task: string;

@@ -5,6 +5,7 @@ import { TaskType, UserType } from "../types";
 import { useEffect, useState } from "react";
 import { createTask } from "../lib/apiWrapper";
 
+
 type PageHeaderProps = {
     currentUser: UserType;
 };
@@ -18,6 +19,8 @@ export default function PageHeader({ currentUser }: PageHeaderProps) {
         time_of_day: "",
         user_id: (localStorage.getItem("user_id") as unknown as number), 
     });
+
+ 
 
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -45,7 +48,7 @@ export default function PageHeader({ currentUser }: PageHeaderProps) {
             duration: taskForm.duration,
             spoons_needed: taskForm.spoons_needed,
             time_of_day: taskForm.time_of_day,
-            user_id: currentUser.user_id,
+            user_id: (localStorage.getItem("user_id") as unknown as number),
         };
 
         console.log("body before submit", body);
@@ -69,6 +72,8 @@ export default function PageHeader({ currentUser }: PageHeaderProps) {
         console.log("taskForm after useEffect", taskForm);
         console.log("currentUser after useEffect", currentUser);
     } , []);
+
+
 
     return (
         <div className="flex w-full items-center justify-between h-20">

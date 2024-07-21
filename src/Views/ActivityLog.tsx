@@ -1,10 +1,31 @@
 import { UserType } from "../types";
 import PageHeader from "../Components/PageHeader";
+import { useEffect, useState } from "react";
+import { getTasksByUserId } from "../lib/apiWrapper";
+import { TaskType } from "../types";
 
 
 type HomeProps = { currentUser: UserType };
 
 export default function Home({ currentUser }: HomeProps) {
+
+    const [activityLog, setActivityLog] = useState<TaskType[] | undefined>([]);
+
+    useEffect(() => {
+        const user = localStorage.getItem("user_id");
+        async function getTasks() {
+            console.log("Current User: " + user);
+            let response = await getTasksByUserId(Number(user));
+            if (response.error) {
+                console.log(response.error);
+            } else {
+                setActivityLog(response.data);
+            }
+            console.log("Activity Log:", response.data);
+        }
+        getTasks();
+    }, []);
+
     return (
         <div className="col-span-4 lg:col-span-8 p-4">
             <PageHeader  currentUser={currentUser}/>
@@ -28,41 +49,26 @@ export default function Home({ currentUser }: HomeProps) {
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* row 1 */}
-                                <tr className="hover">
-                                    <td>June 30th</td>
-                                    <td>10 am</td>
-                                    <td className="text-semibold text-lg">Shower</td>
-                                    <td>3 Spoons consumed</td>
-                                    <td>“Felt a little harder to do this time around”</td>
-                                    <td>...</td>
-                                </tr>
-                                {/* row 2 */}
-                                <tr className="hover">
-                                    <td>June 30th</td>
-                                    <td>11 am</td>
-                                    <td className="text-semibold text-lg">Brush Teeth</td>
-                                    <td>1 Spoons consumed</td>
-                                    <td>“Felt a little harder to do this time around”</td>
-                                    <td>...</td>
-                                </tr>
-                                {/* row 3 */}
-                                <tr className="hover">
-                                    <td>June 30th</td>
-                                    <td>2 pm</td>
-                                    <td className="text-semibold text-lg">Groceries</td>
-                                    <td>6 Spoons consumed</td>
-                                    <td>“Felt a little harder to do this time around”</td>
-                                    <td>...</td>
-                                </tr>
-                                <tr className="hover">
-                                    <td>June 30th</td>
-                                    <td>4 pm</td>
-                                    <td className="text-semibold text-lg">Ate</td>
-                                    <td>2 Spoons consumed</td>
-                                    <td>“Felt a little harder to do this time around”</td>
-                                    <td>...</td>
-                                </tr>
+                            
+                                {activityLog && activityLog.length > 0 ? (
+                                    activityLog.slice().reverse().map((task, index) => (
+                                        <tr className="hover" key={index}>
+                                            <td>{task.date}</td>
+                                            <td>{task.time_of_day}</td>
+                                            <td className="text-semibold text-lg">{task.task}</td>
+                                            <td>{task.spoons_needed} Spoons consumed</td>
+                                            <td>{task.description}</td>
+                                            <td>...</td>
+                                        </tr>
+                                    ))
+                                ) : (
+                                    <tr>
+                                        <td colSpan={6} className="text-center">
+                                            No activities logged.
+                                        </td>
+                                    </tr>
+                                )}
+                                
                                 
                                
                             </tbody>

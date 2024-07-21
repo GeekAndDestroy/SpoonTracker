@@ -27,14 +27,14 @@ export default function LogIn({ logUserIn }: LogInProps) {
 
     const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log("userFormData before login", userFormData);
+        // console.log("userFormData before login", userFormData);
 
         const body = {
             email: userFormData.email,
             password: userFormData.password,
         };
 
-        console.log("body before login", body);
+        // console.log("body before login", body);
 
         let response = await login(body as UserLoginDataType);
         if (response.error) {
@@ -42,7 +42,7 @@ export default function LogIn({ logUserIn }: LogInProps) {
             console.log(response.error);
         } else {
             let newUser = response.data!;
-            console.log("success", newUser);
+            // console.log("success", newUser);
             localStorage.setItem("token", newUser.token);
             localStorage.setItem("email", newUser.user_data.email);
             localStorage.setItem("first_name", newUser.user_data.first_name);
