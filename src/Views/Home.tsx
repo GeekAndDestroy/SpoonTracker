@@ -1,7 +1,7 @@
 import { TaskType, UserType } from "../types";
 import PageHeader from "../Components/PageHeader";
 import ActivityCard from "../Components/ActivityCard";
-import Chart from "../Components/Chart";
+// import Chart from "../Components/Chart";
 import { getTasksByUserId } from "../lib/apiWrapper";
 import { useEffect, useState } from "react";
 

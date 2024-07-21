@@ -11,16 +11,6 @@ type PageHeaderProps = {
     spoonsUsed?: number;
 };
 
-const getGreeting = () => {
-    const currentHour = new Date().getHours();
-    if (currentHour < 12) {
-        return "Good Morning";
-    } else if (currentHour < 18) {
-        return "Good Afternoon";
-    } else {
-        return "Good Evening";
-    }
-};
 
 export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps) {
     const [taskForm, setTaskForm] = useState<Partial<TaskType>>({
