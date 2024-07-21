@@ -10,7 +10,7 @@ import Navigation from "./Components/Navigation";
 import Intro from "./Views/Intro";
 import LogIn from "./Views/Login";
 import ActivityLog from "./Views/ActivityLog";
-import { updateUserById } from "./lib/apiWrapper";
+// import { updateUserById } from "./lib/apiWrapper";
 
 function App() {
     const location = useLocation();
@@ -172,24 +172,7 @@ function App() {
         navigate("/intro");
     };
 
-    // const handleUpdateSpoonsFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    //     e.preventDefault();
-    //     console.log("spoonsForm before submit", spoonsForm);
 
-    //     const body = {spoonsForm};
-
-    //     console.log("body before submit", body);
-
-    //     let response = await updateUserById(Number(localStorage.getItem("user_id")), spoonsForm as UserType);
-    //     if (response.error) {
-    //         console.log(response);
-    //         console.log(response.error);
-    //     } else {
-    //         let newUser = response.data!;
-    //         console.log("success", newUser);
-    //         localStorage.setItem("spoons", newUser.spoons.toString());
-    //     }
-    // }   
 
     return (
         <>

@@ -110,8 +110,8 @@ export default function PageHeader({
         } else {
             let newUser = response.data!;
             console.log("success", newUser);
-            localStorage.setItem("spoons", newUser.spoons.toString());
         }
+        localStorage.setItem("spoons", spoonsForm.spoons!.toString());
     }    
 
     const getGreeting = () => {
@@ -146,7 +146,7 @@ export default function PageHeader({
         } else {
             setSpoonsLabel("bg-green-500");
         }
-    }, [spoonsUsed, handleUpdateSpoonsFormSubmit]);
+    }, [spoonsUsed, spoonsForm]);
 
     useEffect(() => {
         setGreeting(getGreeting());
@@ -156,7 +156,7 @@ export default function PageHeader({
         if (updateActivityLog) {
             updateActivityLog();
         }
-    }, [handleFormSubmit]);
+    }, [taskForm]);
 
     return (
         <div className="flex w-full items-center justify-between h-20">
