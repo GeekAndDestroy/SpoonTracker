@@ -132,9 +132,11 @@ export default function SignUp({}: SignUpProps) {
                         Sign Up
                     </button>
                 </form>
+                <div className="flex justify-center items-center">
                     <a href="/login" className="text-center link">
                         Already have an account? Log In
                     </a>
+                    </div>
             </div>
         </div>
     );

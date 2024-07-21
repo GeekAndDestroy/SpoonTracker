@@ -8,9 +8,10 @@ import { createTask } from "../lib/apiWrapper";
 
 type PageHeaderProps = {
     currentUser: UserType;
+    spoonsUsed?: number;
 };
 
-export default function PageHeader({ currentUser }: PageHeaderProps) {
+export default function PageHeader({ currentUser, spoonsUsed }: PageHeaderProps) {
     const [taskForm, setTaskForm] = useState<Partial<TaskType>>({
         task: "",
         description: "",
@@ -19,6 +20,8 @@ export default function PageHeader({ currentUser }: PageHeaderProps) {
         time_of_day: "",
         user_id: (localStorage.getItem("user_id") as unknown as number), 
     });
+
+    const [spoonsLeft, setSpoonsLeft] = useState(0);
 
  
 
@@ -72,6 +75,13 @@ export default function PageHeader({ currentUser }: PageHeaderProps) {
         console.log("taskForm after useEffect", taskForm);
         console.log("currentUser after useEffect", currentUser);
     } , []);
+
+    useEffect(() => {
+        const spoons = localStorage.getItem("spoons");
+        setSpoonsLeft(Number(spoons)-spoonsUsed!);
+        console.log("spoonsLeft", spoonsLeft);
+    }
+    , [spoonsUsed]);
 
 
 
@@ -146,7 +156,7 @@ export default function PageHeader({ currentUser }: PageHeaderProps) {
                     }
                 >
                     <img src={spoon} className="ml-6"></img>
-                    <p className="mr-6">x{currentUser.spoons}</p>
+                    <p className="mr-6">x{spoonsLeft}</p>
                 </button>
 
                 {/* Log Activity Modal */}
@@ -274,12 +284,30 @@ export default function PageHeader({ currentUser }: PageHeaderProps) {
                                 value={taskForm.description}
                                 onChange={handleInputChange}
                             ></textarea>
+                            <div className = "flex justify-between mt-4">
+                            <button className="btn mx-2 "
+                                    onClick={() =>
+                                (
+                                    document.getElementById(
+                                        "logActivity_modal"
+                                    ) as HTMLDialogElement
+                                ).close()
+                            }>
+                                        Cancel
+                                    </button>
                             <button
                                 type="submit"
                                 className="btn mx-2 bg-info text-white"
+                                onClick={() =>
+                                    (
+                                        document.getElementById(
+                                            "logActivity_modal"
+                                        ) as HTMLDialogElement
+                                    ).close()}
                             >
-                                Submit
+                                Save Activity
                             </button>
+                            </div>
                         </form>
                         <div className="w-full">
                             <div className="modal-action mt-4">
@@ -288,12 +316,12 @@ export default function PageHeader({ currentUser }: PageHeaderProps) {
                                     className="flex w-full justify-between  pt-18"
                                 >
                                     {/* if there is a button in form, it will close the modal */}
-                                    <button className="btn mx-2 ">
+                                    {/* <button className="btn mx-2 ">
                                         Cancel
                                     </button>
                                     <button className="btn mx-2 bg-info text-white">
                                         Save Activity
-                                    </button>
+                                    </button> */}
                                 </form>
                             </div>
                         </div>

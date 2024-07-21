@@ -90,9 +90,11 @@ export default function LogIn({ logUserIn }: LogInProps) {
                         Log In
                     </button>
                 </form>
+                <div className="flex justify-center items-center">
                     <a href="/signup" className="text-center link">
                         Need an account? Sign Up
                     </a>
+                    </div>
             </div>
         </div>
     );

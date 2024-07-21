@@ -41,7 +41,7 @@ export default function Home({ currentUser }: HomeProps) {
 
     return (
         <div className="col-span-4 lg:col-span-8 p-4">
-            <PageHeader currentUser={currentUser} />
+            <PageHeader currentUser={currentUser} spoonsUsed={spoonsUsed}/>
             <div className="divider"></div>
             <div className="w-full items-center justify-between">
                 <div className="w-full p-2">

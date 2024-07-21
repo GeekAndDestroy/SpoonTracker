@@ -11,6 +11,37 @@ export default function Home({ currentUser }: HomeProps) {
 
     const [activityLog, setActivityLog] = useState<TaskType[] | undefined>([]);
 
+    // const [activityLogToday, setActivityLogToday] = useState<TaskType[]>([]);
+    // const [activitiesCount, setActivitiesCount] = useState(0);
+    const [spoonsUsed, setSpoonsUsed] = useState(0);
+    // const [flareUps, setFlareUps] = useState(0);
+
+    useEffect(() => {
+        const user = localStorage.getItem("user_id");
+        async function getTasks() {
+            console.log("Current User: " + user);
+            let response = await getTasksByUserId(Number(user));
+            if (response.error) {
+                console.log(response.error);
+            } else {
+                // Get today's date in YYYY-MM-DD format
+                const today = new Date().toISOString().split('T')[0];
+                
+                // Filter activities to include only today's activities
+                const todaysActivities = response.data!.filter((task: TaskType) => task.date === today);
+                
+                // setActivityLogToday(todaysActivities);
+                
+                // Calculate totals
+                // setActivitiesCount(todaysActivities.length);
+                setSpoonsUsed(todaysActivities.reduce((acc, task) => acc + task.spoons_needed, 0));
+                // setFlareUps(todaysActivities.filter(task => task.task.toLowerCase().includes("flare")).length);
+            }
+            console.log("Activity Log:", response.data);
+        }
+        getTasks();
+    }, []);
+
     useEffect(() => {
         const user = localStorage.getItem("user_id");
         async function getTasks() {
@@ -28,7 +59,7 @@ export default function Home({ currentUser }: HomeProps) {
 
     return (
         <div className="col-span-4 lg:col-span-8 p-4">
-            <PageHeader  currentUser={currentUser}/>
+            <PageHeader currentUser={currentUser} spoonsUsed={spoonsUsed}/>
             <div className="divider"></div>
             <div className="w-full items-center justify-between">
                 <div className="w-full p-2">
