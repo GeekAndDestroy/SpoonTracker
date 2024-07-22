@@ -12,6 +12,11 @@ export default function Home({ currentUser }: HomeProps) {
     const [activitiesCount, setActivitiesCount] = useState(0);
     const [spoonsUsed, setSpoonsUsed] = useState(0);
     const [flareUps, setFlareUps] = useState(0);
+    const [rerender, setRerender] = useState(false);
+
+    const triggerRerender = () => {
+        setRerender(!rerender);
+    };
 
     const updateActivityLog = async () => {
         const user = localStorage.getItem("user_id");
@@ -52,7 +57,7 @@ export default function Home({ currentUser }: HomeProps) {
 
     return (
         <div className="col-span-4 lg:col-span-8 p-4">
-            <PageHeader currentUser={currentUser} spoonsUsed={spoonsUsed} updateActivityLog={updateActivityLog} activityLog={activityLog}/>
+            <PageHeader currentUser={currentUser} spoonsUsed={spoonsUsed} updateActivityLog={updateActivityLog} activityLog={activityLog} triggerRerender={triggerRerender}/>
             <div className="divider"></div>
             <div className="w-full items-center justify-between">
                 <div className="w-full p-2">

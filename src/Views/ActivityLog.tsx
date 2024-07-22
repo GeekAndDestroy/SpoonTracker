@@ -15,6 +15,11 @@ export default function ActivityLog({ currentUser }: ActivityLogProps) {
     const [totalSpoonsUsed, setTotalSpoonsUsed] = useState(0);
     const [startDate, setStartDate] = useState("2024-01-01");
     const [endDate, setEndDate] = useState(new Date().toISOString().split('T')[0]);
+    const [rerender, setRerender] = useState(false);
+
+    const triggerRerender = () => {
+        setRerender(!rerender);
+    };
 
     const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.name === "startDate") {
@@ -70,6 +75,7 @@ export default function ActivityLog({ currentUser }: ActivityLogProps) {
                 spoonsUsed={spoonsUsed} 
                 updateActivityLog={updateActivityLog} 
                 activityLog={activityLog}
+                triggerRerender={triggerRerender}
             />
             <div className="divider"></div>
             <div className="w-full items-center justify-between">

@@ -11,6 +11,7 @@ type PageHeaderProps = {
     currentUser: UserType;
     spoonsUsed?: number;
     updateActivityLog?: () => void;
+    triggerRerender: () => void;
     activityLog?: TaskType[];
 };
 
@@ -19,6 +20,7 @@ export default function PageHeader({
     spoonsUsed,
     updateActivityLog,
     activityLog,
+    triggerRerender
 }: PageHeaderProps) {
     const [taskForm, setTaskForm] = useState<Partial<TaskType>>({
         task: "",
@@ -35,6 +37,7 @@ export default function PageHeader({
         spoons: parseInt(localStorage.getItem("spoons")!),
     });
     const [greeting, setGreeting] = useState("Good Day");
+
 
     function incrementSpoon() {
         setSpoonsForm({ ...spoonsForm, spoons: spoonsForm.spoons! + 1 });
@@ -110,6 +113,7 @@ export default function PageHeader({
         } else {
             let newUser = response.data!;
             console.log("success", newUser);
+            triggerRerender();
         }
         localStorage.setItem("spoons", spoonsForm.spoons!.toString());
     }    
@@ -132,7 +136,7 @@ export default function PageHeader({
         });
         console.log("taskForm after useEffect", taskForm);
         console.log("currentUser after useEffect", currentUser);
-    }, []);
+    }, [, spoonsForm.spoons]);
 
     useEffect(() => {
         const spoons = localStorage.getItem("spoons");
@@ -146,7 +150,7 @@ export default function PageHeader({
         } else {
             setSpoonsLabel("bg-green-500");
         }
-    }, [spoonsUsed, spoonsForm]);
+    }, [spoonsUsed, spoonsForm.spoons]);
 
     useEffect(() => {
         setGreeting(getGreeting());
@@ -156,7 +160,7 @@ export default function PageHeader({
         if (updateActivityLog) {
             updateActivityLog();
         }
-    }, [taskForm]);
+    }, [taskForm, , spoonsForm.spoons]);
 
     return (
         <div className="flex w-full items-center justify-between h-20">
