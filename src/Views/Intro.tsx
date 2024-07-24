@@ -1,6 +1,9 @@
 import graph from "../assets/icons/graph.svg";
 import insight_dark from "../assets/icons/insight_dark.svg";
 import customer_insight from "../assets/icons/customer_insight.svg";
+import Spork from "../assets/Spork.svg";
+import dashboard from "../assets/images/dashboard.jpg";
+
 
 
 type IntroProps = {};
@@ -11,7 +14,9 @@ export default function Intro({}: IntroProps) {
             <div className="flex justify-center  navbar bg-info w-full text-white h-20">
                 <div className="flex justify-center w-10/12">
                 <div className="flex-1 w-full">
-                    <a className="text-3xl font-bold">Spork</a>
+
+                    <img src={Spork} className="w-32" />
+
                 </div>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1">
@@ -45,7 +50,7 @@ export default function Intro({}: IntroProps) {
                         </a>
                     </div>
                     <div className="col-span-2">
-                        <img src="../src/assets/images/dashboard.png" className="w-full"/>
+                        <img src={dashboard} className="w-full"/>
                         
                     </div>
                 </div>

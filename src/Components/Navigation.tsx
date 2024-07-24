@@ -2,6 +2,7 @@ import dashboard from "../assets/icons/dashboard.svg";
 import insight from "../assets/icons/insight.svg";
 import exports from "../assets/icons/exports.svg";
 import settings from "../assets/icons/settings.svg";
+import Spork from "../assets/Spork.svg";
 // import { UserType } from "../types";
 
 type NavigationProps = {
@@ -26,9 +27,10 @@ export default function Navigation({ logUserOut }: NavigationProps) {
 
             <div className="drawer-side">
                 <div className="flex flex-col items-center justify-center">
-                    <h1 className="text-3xl font-bold text-white py-12">
+                    {/* <h1 className="text-3xl font-bold text-white py-12">
                         Spork
-                    </h1>
+                    </h1> */}
+                    <img src={Spork} className="w-2/3 py-12" />
                 </div>
                 <label
                     htmlFor="my-drawer-2"
